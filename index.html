@@ -108,7 +108,14 @@
     .nav-contact {
       border: 1px solid var(--accent);
       padding: 10px 17px;
-      color: var(--accent) !important;
+      color: #ffffff !important;
+      background: var(--accent);
+    }
+
+    .nav-contact:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #090909 !important;
     }
 
     /* HERO */
@@ -150,7 +157,7 @@
     }
 
     .eyebrow {
-      color: var(--accent);
+      color: #4D8DFF;
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 3px;
@@ -167,7 +174,7 @@
     }
 
     .hero h1 span {
-      color: var(--accent);
+      color: #4D8DFF;
     }
 
     .hero-description {
@@ -201,13 +208,14 @@
 
     .button-primary {
       background: var(--accent);
-      color: #090909;
+      color: #ffffff;
       border: 1px solid var(--accent);
     }
 
     .button-primary:hover {
-      background: white;
-      border-color: white;
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #090909;
     }
 
     .button-outline {
@@ -216,8 +224,8 @@
     }
 
     .button-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: #4D8DFF;
+      color: #4D8DFF;
     }
 
     /* GENERAL SECTIONS */
@@ -235,7 +243,7 @@
     }
 
     .section-label {
-      color: var(--accent);
+      color: #4D8DFF;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 3px;
@@ -261,11 +269,15 @@
     .text-link {
       display: inline-block;
       margin-top: 18px;
-      color: var(--accent);
+      color: #4D8DFF;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    .text-link:hover {
+      color: white;
     }
 
     /* PORTFOLIO FILTERS */
@@ -292,7 +304,7 @@
     .filter-button:hover,
     .filter-button.active {
       background: var(--accent);
-      color: #090909;
+      color: #ffffff;
       border-color: var(--accent);
     }
 
@@ -348,7 +360,7 @@
     }
 
     .gallery-category {
-      color: var(--accent);
+      color: #4D8DFF;
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -449,7 +461,7 @@
     }
 
     .about-statement span {
-      color: var(--accent);
+      color: #4D8DFF;
     }
 
     .about-tags {
@@ -484,7 +496,7 @@
     }
 
     .contact h2 span {
-      color: var(--accent);
+      color: #4D8DFF;
     }
 
     .contact p {
@@ -542,7 +554,7 @@
     }
 
     .footer-social:hover {
-      color: var(--accent);
+      color: #4D8DFF;
     }
 
     /* MOBILE */
@@ -712,20 +724,20 @@
 
   <main>
 
-    <!-- HERO / HOMEPAGE -->
+    <!-- HOMEPAGE -->
     <section class="hero" id="home">
       <div class="hero-content">
 
         <p class="eyebrow">Football Photography · Beyond the 90</p>
 
         <h1>
-          Beyond<br>
-          The <span>90.</span>
+          Capturing<br>
+          The <span>Game.</span>
         </h1>
 
         <p class="hero-description">
-          From minute 1 to the 90th, there's always feelings
-          in football. It's down to me to capture it.
+          The moments, emotion and stories that make football more than
+          just a game. Football photography by The VZN.
         </p>
 
         <div class="hero-actions">
@@ -753,7 +765,7 @@
 
           <p class="section-intro">
             From matchday intensity to the details in between.
-            A collection of football moments captured through my lens.
+            Explore the moments captured through my lens.
           </p>
         </div>
 
@@ -777,14 +789,11 @@
 
         <div class="gallery-grid">
 
-          <!-- Replace these sample images with your own photos -->
           <button class="gallery-item" data-category="matchday"
                   data-title="Matchday Moments"
                   data-image="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85">
-            <img
-              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
-              alt="Football matchday atmosphere"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
+                 alt="Football matchday atmosphere" loading="lazy">
             <span class="gallery-overlay">
               <span class="gallery-category">Matchday</span>
               <span class="gallery-title">Matchday Moments</span>
@@ -794,10 +803,8 @@
           <button class="gallery-item" data-category="portraits"
                   data-title="Player Portraits"
                   data-image="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1600&q=85">
-            <img
-              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
-              alt="Football on the pitch"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
+                 alt="Football on the pitch" loading="lazy">
             <span class="gallery-overlay">
               <span class="gallery-category">Portraits</span>
               <span class="gallery-title">Player Portraits</span>
@@ -807,10 +814,8 @@
           <button class="gallery-item" data-category="details"
                   data-title="The Details"
                   data-image="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=85">
-            <img
-              src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
-              alt="Football action and detail"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
+                 alt="Football action and detail" loading="lazy">
             <span class="gallery-overlay">
               <span class="gallery-category">Details</span>
               <span class="gallery-title">The Details</span>
@@ -820,10 +825,8 @@
           <button class="gallery-item" data-category="matchday"
                   data-title="The Action"
                   data-image="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=85">
-            <img
-              src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80"
-              alt="Football action on the pitch"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80"
+                 alt="Football action on the pitch" loading="lazy">
             <span class="gallery-overlay">
               <span class="gallery-category">Matchday</span>
               <span class="gallery-title">The Action</span>
@@ -833,10 +836,8 @@
           <button class="gallery-item" data-category="portraits"
                   data-title="The Players"
                   data-image="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85">
-            <img
-              src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80"
-              alt="Football players and pitch"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80"
+                 alt="Football players and pitch" loading="lazy">
             <span class="gallery-overlay">
               <span class="gallery-category">Portraits</span>
               <span class="gallery-title">The Players</span>
@@ -846,16 +847,28 @@
           <button class="gallery-item" data-category="details"
                   data-title="Beyond The 90"
                   data-image="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=85">
-            <img
-              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80"
-              alt="Football stadium and pitch"
-              loading="lazy">
+            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80"
+                 alt="Football stadium and pitch" loading="lazy">
             <span class="gallery-overlay">
               <span class="gallery-category">Details</span>
               <span class="gallery-title">Beyond The 90</span>
             </span>
           </button>
 
+        </div>
+
+        <!-- LINK TO YOUR FULL EXTERNAL PORTFOLIO -->
+        <div style="text-align: center; margin-top: 45px;">
+          <p style="color: var(--muted); margin-bottom: 18px;">
+            Want to see more of my photography?
+          </p>
+
+          <a href="https://bidvzn.myportfolio.com/"
+             class="button button-primary"
+             target="_blank"
+             rel="noopener noreferrer">
+            Explore Full Portfolio ↗
+          </a>
         </div>
 
       </div>
@@ -913,6 +926,7 @@
         </p>
 
         <div class="contact-links">
+
           <a class="button button-primary"
              href="mailto:bidvzn.work@gmail.com">
             Email Me
@@ -922,8 +936,16 @@
              href="https://www.instagram.com/bidvzn/"
              target="_blank"
              rel="noopener noreferrer">
-            Instagram
+            Instagram ↗
           </a>
+
+          <a class="button button-outline"
+             href="https://bidvzn.myportfolio.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Full Portfolio ↗
+          </a>
+
         </div>
 
       </div>
@@ -936,7 +958,7 @@
     <div class="container footer-inner">
 
       <div>
-        <a href="#home" class="logo-image" aria-label="Back to top">
+        <a href="#home" class="logo-image" aria-label="The VZN home">
           <img src="images/bid.png" alt="The VZN logo">
         </a>
 
@@ -950,6 +972,15 @@
            rel="noopener noreferrer">
           Instagram · @bidvzn
         </a>
+
+        <p>
+          <a class="footer-social"
+             href="https://bidvzn.myportfolio.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            View Full Portfolio ↗
+          </a>
+        </p>
 
         <p>© <span id="year"></span> The VZN. All rights reserved.</p>
       </div>
@@ -1013,12 +1044,9 @@
     const closeButton = document.getElementById("lightbox-close");
 
     function openLightbox(item) {
-      const imageUrl = item.dataset.image;
-      const title = item.dataset.title || "";
-
-      lightboxImage.src = imageUrl;
-      lightboxImage.alt = title;
-      lightboxCaption.textContent = title;
+      lightboxImage.src = item.dataset.image;
+      lightboxImage.alt = item.dataset.title || "";
+      lightboxCaption.textContent = item.dataset.title || "";
 
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
