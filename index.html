@@ -754,6 +754,20 @@ footer .logo-image img{width:160px;max-height:75px;object-fit:contain;object-pos
     animation-iteration-count:1!important
   }
 }
+/* Fix slideshow auto-scrolling on mobile */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: marquee-scroll 26s linear infinite !important;
+  }
+
+  .photo-marquee-track {
+    animation: photo-scroll 42s linear infinite !important;
+  }
+
+  .latest-game-track {
+    animation: latest-game-scroll 68s linear infinite !important;
+  }
+}
 </style>
 </head>
 
