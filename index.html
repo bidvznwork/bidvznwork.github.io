@@ -1,17 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- BIDVZN WEBSITE ICON / FAVICON -->
+  <meta name="theme-color" content="#090909">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/bid.png?v=4">
   <link rel="icon" type="image/png" sizes="192x192" href="./images/bid.png?v=4">
   <link rel="shortcut icon" href="./images/bid.png?v=4" type="image/png">
   <link rel="apple-touch-icon" href="./images/bid.png?v=4">
-  <meta name="theme-color" content="#090909">
-
   <meta name="description" content="The VZN — football photography beyond the 90.">
   <title>The VZN | Football Photography</title>
 
@@ -37,7 +33,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
+    button { font: inherit; }
     img { display: block; max-width: 100%; }
 
     .container { width: min(1200px, 90%); margin: 0 auto; }
@@ -76,23 +72,27 @@
       list-style: none;
     }
 
-    .nav-links a { font-size: 13px; color: #dddddd; transition: color 0.2s ease; }
+    .nav-links a { font-size: 13px; color: #ddd; transition: color .2s ease; }
     .nav-links a:hover { color: var(--accent); }
 
     .nav-contact {
       border: 1px solid var(--accent);
       padding: 10px 17px;
-      color: #ffffff !important;
+      color: #fff !important;
       background: var(--accent);
     }
 
-    .nav-contact:hover { background: #ffffff; border-color: #ffffff; color: #090909 !important; }
+    .nav-contact:hover {
+      background: #fff;
+      border-color: #fff;
+      color: #090909 !important;
+    }
 
     /* HERO */
     .hero {
       min-height: min(790px, calc(100svh - 100px));
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
       align-items: stretch;
       position: relative;
       overflow: hidden;
@@ -103,8 +103,8 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      width: 90%;
-      max-width: 620px;
+      width: min(620px, 90%);
+      max-width: none;
       margin-left: max(5vw, calc((100vw - 1200px) / 2));
       padding: 105px 36px 100px 0;
       align-self: center;
@@ -121,7 +121,8 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, #090909 0%, rgba(9,9,9,0.28) 28%, rgba(9,9,9,0.02) 100%), linear-gradient(0deg, rgba(0,0,0,0.42), transparent 45%);
+      background: linear-gradient(90deg, #090909 0%, rgba(9,9,9,.28) 28%, rgba(9,9,9,.02) 100%),
+                  linear-gradient(0deg, rgba(0,0,0,.42), transparent 45%);
     }
 
     .hero-visual::after {
@@ -129,7 +130,7 @@
       position: absolute;
       right: 28px;
       bottom: 24px;
-      color: rgba(255,255,255,0.82);
+      color: rgba(255,255,255,.82);
       font-size: 10px;
       letter-spacing: 3px;
       font-weight: 700;
@@ -146,10 +147,11 @@
 
     .hero h1 {
       font-size: clamp(58px, 7.3vw, 112px);
-      line-height: 0.88;
-      letter-spacing: -0.075em;
+      line-height: .88;
+      letter-spacing: -.075em;
       font-weight: 900;
       text-transform: uppercase;
+      max-width: 900px;
     }
 
     .hero h1 span { color: var(--accent); }
@@ -161,7 +163,13 @@
       margin-top: 25px;
     }
 
-    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; margin-top: 35px; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px;
+      margin-top: 35px;
+    }
 
     .button {
       display: inline-flex;
@@ -173,73 +181,71 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
       cursor: pointer;
       border-radius: 0;
     }
 
     .button:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--accent); color: #ffffff; border: 1px solid var(--accent); }
-    .button-primary:hover { background: #ffffff; border-color: #ffffff; color: #090909; }
-    .button-outline { border: 1px solid rgba(255, 255, 255, 0.6); color: white; }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 1px solid var(--accent);
+    }
+
+    .button-primary:hover { background: #fff; border-color: #fff; color: #090909; }
+
+    .button-outline { border: 1px solid rgba(255,255,255,.6); color: #fff; }
     .button-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* TEXT SCROLL */
+    /* SCROLLING BRAND STRIP */
     .marquee {
       overflow: hidden;
       background: var(--accent);
-      color: #ffffff;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.12);
       padding: 17px 0 15px;
       transform: rotate(-1.2deg) scale(1.015);
       width: 100%;
       position: relative;
       z-index: 3;
-      -webkit-transform: translateZ(0) rotate(-1.2deg) scale(1.015);
     }
 
     .marquee-track {
       display: flex;
-      flex-wrap: nowrap;
       width: max-content;
-      min-width: max-content;
-      animation: marquee-scroll 22s linear infinite;
-      -webkit-animation: marquee-scroll 22s linear infinite;
-      animation-play-state: running;
-      -webkit-animation-play-state: running;
+      animation: marquee-scroll 32s linear infinite;
       will-change: transform;
-      transform: translateZ(0);
     }
 
     .marquee-group {
       display: flex;
       align-items: center;
-      flex: 0 0 auto;
+      flex-shrink: 0;
       gap: 28px;
       padding-right: 28px;
       white-space: nowrap;
       font-size: clamp(18px, 2.5vw, 31px);
       line-height: 1;
       font-weight: 900;
-      letter-spacing: -0.04em;
+      letter-spacing: -.04em;
       text-transform: uppercase;
     }
 
-    .marquee-star { color: #090909; font-size: 0.8em; }
+    .marquee-star { color: #090909; font-size: .8em; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
 
     @keyframes marquee-scroll {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(-50%, 0, 0); }
-    }
-
-    @-webkit-keyframes marquee-scroll {
-      from { -webkit-transform: translate3d(0, 0, 0); }
-      to { -webkit-transform: translate3d(-50%, 0, 0); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     /* GENERAL SECTIONS */
     section { padding: 112px 0; }
-    #portfolio { padding-top: 88px; }
+    #portfolio { padding-top: 88px; overflow: hidden; }
+
+    .section-heading h2, .about h2, .contact h2 { font-weight: 900; }
 
     .section-heading {
       display: flex;
@@ -259,7 +265,6 @@
     }
 
     .section-heading h2, .about h2, .contact h2 {
-      font-weight: 900;
       font-size: clamp(34px, 5vw, 58px);
       line-height: 1.05;
       letter-spacing: -2px;
@@ -267,132 +272,275 @@
     }
 
     .section-intro { color: var(--muted); max-width: 420px; font-size: 14px; }
-    .text-link { display: inline-block; margin-top: 18px; color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-    .text-link:hover { color: white; }
 
-    /* PHOTO SCROLL */
+    .text-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .text-link:hover { color: #fff; }
+
+    /* AUTOMATICALLY SCROLLING PHOTO STRIP */
     .photo-marquee {
       width: 100%;
       overflow: hidden;
       padding: 8px 0 22px;
       background: var(--background);
-      position: relative;
-      -webkit-transform: translateZ(0);
     }
 
     .photo-marquee-track {
       display: flex;
-      flex-wrap: nowrap;
       width: max-content;
-      min-width: max-content;
       gap: 14px;
-      animation: photo-scroll 35s linear infinite;
-      -webkit-animation: photo-scroll 35s linear infinite;
-      animation-play-state: running;
-      -webkit-animation-play-state: running;
+      animation: photo-scroll 55s linear infinite;
       will-change: transform;
-      transform: translateZ(0);
     }
 
-    .photo-marquee-group {
-      display: flex;
-      flex: 0 0 auto;
-      flex-shrink: 0;
-      flex-wrap: nowrap;
-      gap: 14px;
-      padding-right: 0;
-    }
+    .photo-marquee-group { display: flex; flex-shrink: 0; gap: 14px; padding-right: 0; }
 
     .photo-marquee img {
       display: block;
-      flex: 0 0 auto;
       width: clamp(190px, 24vw, 330px);
       height: clamp(145px, 20vw, 250px);
       object-fit: cover;
-      filter: saturate(0.9);
-      transition: filter 0.3s ease, transform 0.3s ease;
+      filter: saturate(.9);
+      transition: filter .3s ease, transform .3s ease;
     }
 
-    .photo-marquee img:hover { filter: saturate(1.1); }
+    .photo-marquee img:hover { filter: saturate(1.1); transform: scale(.98); }
+    .photo-marquee:hover .photo-marquee-track { animation-play-state: paused; }
 
     @keyframes photo-scroll {
-      from { transform: translate3d(0, 0, 0); }
-      to { transform: translate3d(-50%, 0, 0); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
-    @-webkit-keyframes photo-scroll {
-      from { -webkit-transform: translate3d(0, 0, 0); }
-      to { -webkit-transform: translate3d(-50%, 0, 0); }
-    }
+    /* PORTFOLIO GALLERY — PRESERVES ORIGINAL IMAGE ORIENTATION */
+    #portfolio .section-heading { margin-bottom: 42px; }
+    #portfolio .section-heading h2 { font-size: clamp(42px, 6vw, 76px); letter-spacing: -.065em; }
+    #portfolio .section-intro { max-width: 360px; line-height: 1.8; }
 
-    /* PHOTO GALLERY */
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      align-items: stretch;
+      columns: 4 220px;
+      column-gap: 12px;
+      width: 100%;
     }
 
     .gallery-item {
       position: relative;
-      display: block;
+      display: inline-block;
+      vertical-align: top;
+      break-inside: avoid;
       overflow: hidden;
-      background: #191919;
-      aspect-ratio: 4 / 3;
-      cursor: pointer;
+      isolation: isolate;
+      background: #151515;
+      cursor: zoom-in;
       border: 0;
       padding: 0;
       width: 100%;
+      min-width: 0;
+      margin: 0 0 12px;
+      text-align: left;
+      appearance: none;
+      -webkit-appearance: none;
+      animation: gallery-reveal .65s both;
     }
 
-    .gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .gallery-item:hover img { transform: scale(1.035); }
+    .gallery-item::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 35% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.78));
+      opacity: .15;
+      transition: opacity .35s ease;
+      pointer-events: none;
+    }
+
+    .gallery-item::after {
+      content: "BIDVZN / VIEW FRAME ↗";
+      position: absolute;
+      z-index: 2;
+      left: 17px;
+      bottom: 15px;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .3s ease, transform .3s ease;
+      pointer-events: none;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      transform: scale(1.001);
+      transition: transform .75s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+      filter: saturate(.92) contrast(1.02);
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img {
+      transform: scale(1.045);
+      filter: saturate(1.08) contrast(1.03);
+    }
+
+    .gallery-item:hover::before,
+    .gallery-item:focus-visible::before { opacity: 1; }
+
+    .gallery-item:hover::after,
+    .gallery-item:focus-visible::after { opacity: 1; transform: translateY(0); }
+
+    .gallery-item:focus-visible,
+    .lightbox-control:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    @keyframes gallery-reveal {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* LIGHTBOX */
     .lightbox {
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.96);
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 25px;
+      padding: 64px 84px 76px;
+      background: rgba(4,5,8,.985);
+      backdrop-filter: blur(18px);
     }
 
-    .lightbox.open { display: flex; }
+    .lightbox.open { display: flex; animation: lightbox-fade .22s ease both; }
+
+    @keyframes lightbox-fade { from { opacity: 0; } to { opacity: 1; } }
 
     .lightbox-content {
       position: relative;
-      max-width: 1100px;
       width: 100%;
+      height: 100%;
+      max-width: 1500px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .lightbox img { max-height: 82vh; max-width: 100%; width: auto; object-fit: contain; }
-
-    .lightbox-close {
-      position: absolute;
-      top: -45px;
-      right: 0;
-      background: transparent;
-      color: white;
-      border: 0;
-      font-size: 32px;
-      cursor: pointer;
+    .lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      box-shadow: 0 25px 100px rgba(0,0,0,.6);
+      animation: image-arrive .28s ease both;
     }
 
-    .lightbox-caption { position: absolute; bottom: -35px; left: 0; color: #ccc; font-size: 13px; }
+    @keyframes image-arrive {
+      from { opacity: .5; transform: scale(.985); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .lightbox-close, .lightbox-control {
+      position: fixed;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(18,18,18,.88);
+      color: #fff;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .lightbox-close { top: 20px; right: 22px; font-size: 30px; }
+    .lightbox-control.prev { left: 20px; top: 50%; transform: translateY(-50%); }
+    .lightbox-control.next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+    .lightbox-close:hover, .lightbox-control:hover { background: var(--accent); border-color: var(--accent); }
+    .lightbox-control.prev:hover { transform: translate(-3px, -50%); }
+    .lightbox-control.next:hover { transform: translate(3px, -50%); }
+
+    .lightbox-bottom {
+      position: fixed;
+      left: 25px;
+      right: 25px;
+      bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      color: #ddd;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .lightbox-caption { color: #fff; font-weight: 700; }
+    .lightbox-counter { color: #a6a6a6; font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 900px) {
+      .gallery-grid { columns: 3 180px; column-gap: 10px; }
+      .gallery-item { margin-bottom: 10px; }
+      .lightbox { padding: 60px 55px 74px; }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid { columns: 2; column-gap: 8px; }
+      .gallery-item { margin-bottom: 8px; }
+      .gallery-item::after { left: 9px; bottom: 9px; font-size: 8px; letter-spacing: 1px; }
+      .lightbox { padding: 64px 8px 74px; }
+      .lightbox-control { width: 38px; height: 38px; font-size: 20px; }
+      .lightbox-control.prev { left: 7px; }
+      .lightbox-control.next { right: 7px; }
+      .lightbox-close { top: 10px; right: 10px; width: 40px; height: 40px; }
+      .lightbox-bottom { left: 12px; right: 12px; bottom: 12px; font-size: 9px; letter-spacing: 1px; }
+    }
 
     /* ABOUT */
-    .about { background: #101010; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .about {
+      background: #101010;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
     .about-copy p { color: #b7b7b7; font-size: 15px; margin-top: 20px; max-width: 550px; }
-    .about-copy strong { color: white; }
+    .about-copy strong { color: #fff; }
+
     .about-feature { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
-    .about-feature-image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; background: #191919; }
+
+    .about-feature-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      background: #191919;
+    }
 
     .about-statement {
       border-left: 3px solid var(--accent);
@@ -404,11 +552,40 @@
     }
 
     .about-statement span { color: var(--accent); }
+
     .about-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
-    .about-tags span { border: 1px solid var(--border); padding: 8px 12px; color: #ccc; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+
+    .about-tags span {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      color: #ccc;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+    .contact .section-label { margin-bottom: 18px; }
+
+    .contact h2 { max-width: 750px; margin: 0 auto; }
+    .contact h2 span { color: var(--accent); }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 22px auto 30px;
+      font-size: 14px;
+    }
+
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
     /* CLUBS */
-    .clubs { background: #090909; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .clubs {
+      background: #090909;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
 
     .clubs-grid {
       display: grid;
@@ -432,17 +609,16 @@
     }
 
     .club-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
     .club-card img { width: 82px; height: 82px; object-fit: contain; }
-    .club-card span { font-size: 11px; font-weight: 700; letter-spacing: .8px; line-height: 1.4; text-transform: uppercase; }
 
-    /* CONTACT */
-    .contact { text-align: center; }
-    .contact .section-label { margin-bottom: 18px; }
-    .contact h2 { max-width: 750px; margin: 0 auto; }
-    .contact h2 span { color: var(--accent); }
-    .contact p { color: var(--muted); max-width: 500px; margin: 22px auto 30px; font-size: 14px; }
-
-    .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+    .club-card span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
 
     /* BOOKING FORM */
     .booking-form {
@@ -454,14 +630,31 @@
       text-align: left;
     }
 
-    .booking-form h3 { font-size: clamp(23px, 3vw, 32px); text-transform: uppercase; line-height: 1.1; margin-bottom: 10px; }
+    .booking-form h3 {
+      font-size: clamp(23px, 3vw, 32px);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
     .booking-form .form-intro { margin: 0 0 28px; max-width: none; text-align: left; }
 
-    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
     .form-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
     .form-field.full-width { grid-column: 1 / -1; }
 
-    .form-field label { color: #eee; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .form-field label {
+      color: #eee;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
     .form-field input, .form-field select, .form-field textarea {
       width: 100%;
@@ -471,30 +664,54 @@
       background: #090909;
       border: 1px solid rgba(255,255,255,.18);
       border-radius: 0;
+      font: inherit;
       font-size: 14px;
       outline: none;
     }
 
     .form-field textarea { min-height: 130px; resize: vertical; }
 
-    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--accent); }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+      border-color: var(--accent);
+    }
+
     .form-field select option { background: #111; color: #fff; }
 
-    .form-submit-row { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 22px; }
-    .form-note { color: var(--muted); font-size: 11px; line-height: 1.5; margin: 0; text-align: left; max-width: 470px; }
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+      margin: 0;
+      text-align: left;
+      max-width: 470px;
+    }
 
     /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 30px 0; }
 
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
     footer .logo-image img { width: 160px; max-height: 75px; object-fit: contain; object-position: left center; }
     .footer-tagline { color: var(--muted); font-size: 11px; margin-top: 4px; }
     .footer-right { color: var(--muted); font-size: 11px; text-align: right; }
-    .footer-social { color: white; display: inline-block; margin-bottom: 5px; }
+    .footer-social { color: #fff; display: inline-block; margin-bottom: 5px; }
     .footer-social:hover { color: var(--accent); }
 
-    /* TABLET */
+    /* MOBILE */
     @media (max-width: 800px) {
       .nav { min-height: 82px; gap: 12px; }
       .logo-image img { width: 145px; max-height: 60px; }
@@ -502,37 +719,26 @@
       .nav-links a { font-size: 11px; }
       .nav-contact { padding: 7px 10px; }
 
-      .hero { min-height: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); }
+      .hero { min-height: 0; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); }
 
-      .hero-content { width: 90%; margin-left: 5%; padding: 75px 16px 70px 0; }
+      .hero-content {
+        width: 90%;
+        margin-left: 5%;
+        padding: 75px 16px 70px 0;
+      }
+
       .hero-visual { min-height: 570px; background-position: 58% center; }
-
-      .marquee-track {
-        animation: marquee-scroll 22s linear infinite !important;
-        -webkit-animation: marquee-scroll 22s linear infinite !important;
-        animation-play-state: running !important;
-        -webkit-animation-play-state: running !important;
-      }
-
-      .photo-marquee-track {
-        animation: photo-scroll 35s linear infinite !important;
-        -webkit-animation: photo-scroll 35s linear infinite !important;
-        animation-play-state: running !important;
-        -webkit-animation-play-state: running !important;
-      }
-
-      .marquee:hover .marquee-track, .photo-marquee:hover .photo-marquee-track {
-        animation-play-state: running !important;
-        -webkit-animation-play-state: running !important;
-      }
-
+      .marquee { padding: 14px 0 12px; }
+      .marquee-track { animation-duration: 26s; }
+      .photo-marquee-track { animation-duration: 42s; }
+      .hero h1 { letter-spacing: -3px; }
       section { padding: 75px 0; }
       .about-layout { grid-template-columns: 1fr; gap: 40px; }
       .clubs-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .gallery-grid { columns: 2 220px; column-gap: 10px; }
+      .gallery-item { margin-bottom: 10px; }
     }
 
-    /* MOBILE */
     @media (max-width: 500px) {
       .container { width: 92%; }
       .nav { min-height: 76px; }
@@ -543,40 +749,50 @@
       .nav-contact { padding: 7px 9px; }
 
       .hero { display: flex; flex-direction: column; min-height: 0; }
+
       .hero-content { width: 90%; margin: 0 auto; padding: 72px 0 45px; }
-      .hero h1 { font-size: clamp(52px, 13vw, 78px); letter-spacing: -0.07em; }
+      .hero h1 { font-size: clamp(52px, 13vw, 78px); letter-spacing: -.07em; }
       .hero-visual { min-height: 48svh; height: 48svh; background-position: center 40%; }
-      .hero-visual::before { background: linear-gradient(0deg, rgba(9,9,9,0.1), transparent 50%); }
 
-      .marquee { padding: 14px 0 12px; }
-      .marquee-track { animation-duration: 22s !important; -webkit-animation-duration: 22s !important; }
-      .marquee-group { font-size: 20px; gap: 18px; padding-right: 18px; }
+      .hero-visual::before { background: linear-gradient(0deg, rgba(9,9,9,.1), transparent 50%); }
 
-      .photo-marquee { overflow: hidden; width: 100%; }
-      .photo-marquee-track { animation-duration: 30s !important; -webkit-animation-duration: 30s !important; }
+      .marquee-group { font-size: 20px; gap: 18px; }
+      .marquee-group { padding-right: 18px; }
       .photo-marquee-track, .photo-marquee-group { gap: 10px; }
       .photo-marquee img { width: 220px; height: 155px; }
 
       .section-heading { align-items: flex-start; flex-direction: column; }
-      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-      .gallery-item { aspect-ratio: 4 / 3; }
+      .gallery-grid { columns: 2; column-gap: 7px; }
+      .gallery-item { margin-bottom: 7px; }
+
       .clubs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       .club-card { min-height: 145px; padding: 16px 10px; }
       .club-card img { width: 68px; height: 68px; }
       .form-grid { grid-template-columns: 1fr; }
       .form-field.full-width { grid-column: auto; }
+
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-right { text-align: left; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after { transition-duration: .01ms !important; }
+
+      .marquee-track, .photo-marquee-track { animation: none; }
     }
   </style>
 </head>
 
 <body>
+  <!-- NAVIGATION -->
   <header>
     <div class="container nav">
       <a href="#home" class="logo-image" aria-label="The VZN home">
         <img src="images/bid.png" alt="The VZN logo">
       </a>
+
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -590,22 +806,32 @@
   </header>
 
   <main>
+    <!-- HOMEPAGE -->
     <section class="hero" id="home">
       <div class="hero-content">
         <p class="eyebrow">Football Photography · Beyond the 90</p>
-        <h1>Capturing<br>The <span>Game.</span></h1>
+
+        <h1>
+          Capturing<br>
+          The <span>Game.</span>
+        </h1>
+
         <p class="hero-description">
-          The moments, emotion and stories that make football more than just a game. Football photography by The VZN.
+          The moments, emotion and stories that make football more than
+          just a game. Football photography by The VZN.
         </p>
+
         <div class="hero-actions">
           <a href="#portfolio" class="button button-primary">View Portfolio</a>
           <a href="#contact" class="button button-outline">Work With Me</a>
         </div>
       </div>
+
       <div class="hero-visual" role="img" aria-label="Football photography hero image"></div>
     </section>
 
-    <div class="marquee" aria-label="Football Photography · Beyond the 90">
+    <!-- SCROLLING BRAND STRIP -->
+    <div class="marquee" aria-label="Football Photography · Beyond the 90" role="region">
       <div class="marquee-track" aria-hidden="true">
         <div class="marquee-group">
           <span>Football Photography</span><span class="marquee-star">✳</span>
@@ -622,9 +848,10 @@
       </div>
     </div>
 
+    <!-- AUTOMATICALLY SCROLLING PORTFOLIO PHOTOS -->
     <div class="photo-marquee" aria-label="Scrolling selection of football photography">
       <div class="photo-marquee-track">
-        <div class="photo-marquee-group">
+        <div class="photo-marquee-group" aria-hidden="false">
           <img src="images/IMG_3163.jpg" alt="Football photography selection 1" loading="lazy">
           <img src="images/IMG_3682 2 (1).jpg" alt="Football photography selection 2" loading="lazy">
           <img src="images/IMG_6641 2 (1).jpg" alt="Football photography selection 3" loading="lazy">
@@ -638,6 +865,7 @@
           <img src="images/IMG_3652.jpg" alt="Football photography selection 11" loading="lazy">
           <img src="images/IMG_3734.jpg" alt="Football photography selection 12" loading="lazy">
         </div>
+
         <div class="photo-marquee-group" aria-hidden="true">
           <img src="images/IMG_3163.jpg" alt="" loading="lazy">
           <img src="images/IMG_3682 2 (1).jpg" alt="" loading="lazy">
@@ -655,6 +883,7 @@
       </div>
     </div>
 
+    <!-- PORTFOLIO -->
     <section id="portfolio">
       <div class="container">
         <div class="section-heading">
@@ -662,40 +891,74 @@
             <p class="section-label">Selected Work</p>
             <h2>The Portfolio.</h2>
           </div>
+
           <p class="section-intro">
-            From matchday intensity to the details in between. Explore the moments captured through my lens.
+            Every frame tells part of the story. A collection of matchday moments,
+            raw emotion and the details that make football unforgettable.
           </p>
         </div>
-        <div class="gallery-grid" id="gallery-grid"></div>
-        <div style="text-align:center; margin-top:45px;">
-          <p style="color:var(--muted); margin-bottom:18px;">Want to see more of my photography?</p>
-          <a href="https://bidvzn.myportfolio.com/" class="button button-primary" target="_blank" rel="noopener noreferrer">Explore Full Portfolio ↗</a>
+
+        <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+
+        <div style="text-align: center; margin-top: 45px;">
+          <p style="color: var(--muted); margin-bottom: 18px;">
+            Want to see more of my photography?
+          </p>
+
+          <a href="https://bidvzn.myportfolio.com/"
+             class="button button-primary"
+             target="_blank"
+             rel="noopener noreferrer">
+            Explore Full Portfolio ↗
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container about-layout">
         <div class="about-copy">
           <p class="section-label">Behind The Lens</p>
           <h2>More Than<br>A Game.</h2>
+
           <p>
-            I'm Brady, better known as BIDVZN. Photography has become the start of a career I'm determined to build. From capturing late winners, cupsets and everything in between, I aim to tell the story of the match through my lens.
+            I'm Brady, better known as BIDVZN.
+            Since leaving my academic years behind me, photography has become my life.
+            What was once a hobby is now the start of a career I'm determined to build.
+            From capturing late winners, cupsets and everything inbetween,
+            <strong>I aim to tell the story of the match through my lens.</strong>
           </p>
+
           <p>
-            I've worked with clubs including <strong>Punjab United, SE Dons, Hashtag United, Croydon Athletic and Inspire Sports Academy.</strong> Through these opportunities I've developed my style and experience in football media.
+            I've worked with clubs including <strong>Punjab United,
+            SE Dons, Hashtag United, Croydon Athletic and Inspire Sports Academy</strong>.
+            Through these opportunities I've developed my style and experience in football media.
           </p>
+
           <div class="about-tags">
-            <span>Football</span><span>Matchday</span><span>Sports Media</span><span>Visual Storytelling</span>
+            <span>Football</span>
+            <span>Matchday</span>
+            <span>Sports Media</span>
+            <span>Visual Storytelling</span>
           </div>
         </div>
+
         <div class="about-feature">
-          <img class="about-feature-image" src="images/IMG_1841.png" alt="Football action captured by BIDVZN" loading="lazy">
-          <div class="about-statement">Every match has a story. <span>I'm here to capture it.</span></div>
+          <img class="about-feature-image"
+               src="images/IMG_1841.png"
+               alt="Football action captured by BIDVZN"
+               loading="lazy">
+
+          <div class="about-statement">
+            Every match has a story.
+            <span>I'm here to capture it.</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- CLUBS & ORGANISATIONS -->
     <section class="clubs" id="clubs">
       <div class="container">
         <div class="section-heading">
@@ -703,31 +966,75 @@
             <p class="section-label">Experience</p>
             <h2>Clubs &amp; Organisations.</h2>
           </div>
+
           <p class="section-intro">
-            A selection of the clubs and organisations I've had the opportunity to work with through football photography.
+            A selection of the clubs and organisations I've had the opportunity
+            to work with through football photography.
           </p>
         </div>
+
         <div class="clubs-grid">
-          <div class="club-card"><img src="images/punjab.png" alt="Punjab United badge" loading="lazy"><span>Punjab United</span></div>
-          <div class="club-card"><img src="images/dons.png" alt="SE Dons badge" loading="lazy"><span>SE Dons</span></div>
-          <div class="club-card"><img src="images/hashtag.png" alt="Hashtag United badge" loading="lazy"><span>Hashtag United</span></div>
-          <div class="club-card"><img src="images/croydon.png" alt="Croydon Athletic badge" loading="lazy"><span>Croydon Athletic</span></div>
-          <div class="club-card"><img src="images/inspire.png" alt="Inspire Sports Academy badge" loading="lazy"><span>Inspire Sports Academy</span></div>
+          <div class="club-card">
+            <img src="images/punjab.png" alt="Punjab United badge" loading="lazy">
+            <span>Punjab United</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/dons.png" alt="SE Dons badge" loading="lazy">
+            <span>SE Dons</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/hashtag.png" alt="Hashtag United badge" loading="lazy">
+            <span>Hashtag United</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/croydon.png" alt="Croydon Athletic badge" loading="lazy">
+            <span>Croydon Athletic</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/inspire.png" alt="Inspire Sports Academy badge" loading="lazy">
+            <span>Inspire Sports Academy</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="container">
         <p class="section-label">Let's Work Together</p>
+
         <h2>Have A Game<br>In <span>Mind?</span></h2>
+
         <p>
-          Football is so much more than a game. It's emotion, identity and moments that'll be remembered for a lifetime. Every match has a different story. Let me capture yours.
+          Football is so much more than a game.
+          It's emotion, identity and moments that'll be remembered for a lifetime.
+          <strong>It's my job to make sure those moments never fade.</strong>
+          Every match has a story has a different story. Let me capture yours.
+          Contact now via <strong>Email or DM</strong> for more information.
         </p>
+
         <div class="contact-links">
-          <a class="button button-outline" href="https://www.instagram.com/bidvzn/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          <a class="button button-primary" href="mailto:bidvzn.work@gmail.com">Email Me</a>
-          <a class="button button-outline" href="https://bidvzn.myportfolio.com/" target="_blank" rel="noopener noreferrer">Full Portfolio ↗</a>
+          <a class="button button-outline"
+             href="https://www.instagram.com/bidvzn/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Instagram ↗
+          </a>
+
+          <a class="button button-primary" href="mailto:bidvzn.work@gmail.com">
+            Email Me
+          </a>
+
+          <a class="button button-outline"
+             href="https://bidvzn.myportfolio.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Full Portfolio ↗
+          </a>
         </div>
 
         <form class="booking-form" id="booking-form">
@@ -735,19 +1042,23 @@
           <p class="form-intro">
             Tell me a little about your fixture or project and I'll get back to you as soon as possible.
           </p>
+
           <div class="form-grid">
             <div class="form-field">
               <label for="booking-name">Your name *</label>
               <input id="booking-name" name="name" type="text" autocomplete="name" required>
             </div>
+
             <div class="form-field">
               <label for="booking-email">Email address *</label>
               <input id="booking-email" name="email" type="email" autocomplete="email" required>
             </div>
+
             <div class="form-field">
               <label for="booking-club">Club / organisation</label>
               <input id="booking-club" name="club" type="text" placeholder="Your club or organisation">
             </div>
+
             <div class="form-field">
               <label for="booking-type">Type of shoot *</label>
               <select id="booking-type" name="shoot_type" required>
@@ -759,23 +1070,30 @@
                 <option>Other photography enquiry</option>
               </select>
             </div>
+
             <div class="form-field">
               <label for="booking-date">Preferred date</label>
               <input id="booking-date" name="date" type="date">
             </div>
+
             <div class="form-field">
               <label for="booking-location">Venue / location</label>
               <input id="booking-location" name="location" type="text" placeholder="Stadium, town or venue">
             </div>
+
             <div class="form-field full-width">
               <label for="booking-details">Tell me more *</label>
-              <textarea id="booking-details" name="details" placeholder="Fixture details, timings, what coverage you're looking for, etc." required></textarea>
+              <textarea id="booking-details" name="details"
+                        placeholder="Fixture details, timings, what coverage you're looking for, etc."
+                        required></textarea>
             </div>
           </div>
+
           <div class="form-submit-row">
             <button type="submit" class="button button-primary">Send Enquiry ↗</button>
             <p class="form-note">
-              Submitting opens your email app with the enquiry filled in, ready for you to send. Your details aren't stored on this website.
+              Submitting opens your email app with the enquiry filled in, ready for you to send.
+              Your details aren't stored on this website.
             </p>
           </div>
         </form>
@@ -783,6 +1101,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
       <div>
@@ -791,84 +1110,161 @@
         </a>
         <p class="footer-tagline">Beyond the 90.</p>
       </div>
+
       <div class="footer-right">
-        <a class="footer-social" href="https://www.instagram.com/bidvzn/" target="_blank" rel="noopener noreferrer">Instagram · @bidvzn</a>
-        <p><a class="footer-social" href="https://bidvzn.myportfolio.com/" target="_blank" rel="noopener noreferrer">View Full Portfolio ↗</a></p>
+        <a class="footer-social"
+           href="https://www.instagram.com/bidvzn/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Instagram · @bidvzn
+        </a>
+
+        <p>
+          <a class="footer-social"
+             href="https://bidvzn.myportfolio.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            View Full Portfolio ↗
+          </a>
+        </p>
+
         <p>© <span id="year"></span> The VZN. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
+  <!-- PHOTO LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog"
+       aria-modal="true" aria-label="Portfolio photo viewer">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image">&times;</button>
+    <button class="lightbox-control prev" id="lightbox-prev" type="button" aria-label="Previous photo">&#8592;</button>
+
     <div class="lightbox-content">
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
       <img id="lightbox-image" src="" alt="">
+    </div>
+
+    <button class="lightbox-control next" id="lightbox-next" type="button" aria-label="Next photo">&#8594;</button>
+
+    <div class="lightbox-bottom">
       <p class="lightbox-caption" id="lightbox-caption"></p>
+      <p class="lightbox-counter" id="lightbox-counter"></p>
     </div>
   </div>
 
   <script>
+    // Automatically update the copyright year.
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // All original portfolio images and filenames are preserved.
     const portfolioPhotos = [
-      "IMG_3163.jpg",
-      "IMG_3682 2 (1).jpg",
-      "IMG_6641 2 (1).jpg",
-      "IMG_1138.jpg",
-      "IMG_1151.jpg",
-      "IMG_1257.jpg",
-      "IMG_1306.jpg",
-      "IMG_2771.jpg",
-      "IMG_3609.jpg",
-      "IMG_3649.jpg",
-      "IMG_3652.jpg",
-      "IMG_3734.jpg",
-      "IMG_3738.jpg",
-      "IMG_3774.jpg",
-      "IMG_3775.jpg",
-      "IMG_6942.jpg",
-      "IMG_6951.jpg",
-      "IMG_6955.jpg",
-      "IMG_9374.jpg",
-      "IMG_9410.jpg",
-      "IMG_9415.jpg",
-      "IMG_4984.jpg",
-      "IMG_5144.jpg",
-      "IMG_5187.jpg",
-      "IMG_5446.jpg",
-      "IMG_5475.jpg",
-      "IMG_5519.jpg",
-      "IMG_8200.jpg",
-      "IMG_8299.jpg",
-      "IMG_8301.jpg"
+      { filename: "IMG_3163.jpg" },
+      { filename: "IMG_3682 2 (1).jpg" },
+      { filename: "IMG_6641 2 (1).jpg" },
+      { filename: "IMG_1138.jpg" },
+      { filename: "IMG_1151.jpg" },
+      { filename: "IMG_1257.jpg" },
+      { filename: "IMG_1306.jpg" },
+      { filename: "IMG_2771.jpg" },
+      { filename: "IMG_3609.jpg" },
+      { filename: "IMG_3649.jpg" },
+      { filename: "IMG_3652.jpg" },
+      { filename: "IMG_3734.jpg" },
+      { filename: "IMG_3738.jpg" },
+      { filename: "IMG_3774.jpg" },
+      { filename: "IMG_3775.jpg" },
+      { filename: "IMG_6942.jpg" },
+      { filename: "IMG_6951.jpg" },
+      { filename: "IMG_6955.jpg" },
+      { filename: "IMG_9374.jpg" },
+      { filename: "IMG_9410.jpg" },
+      { filename: "IMG_9415.jpg" },
+      { filename: "IMG_4984.jpg" },
+      { filename: "IMG_5144.jpg" },
+      { filename: "IMG_5187.jpg" },
+      { filename: "IMG_5446.jpg" },
+      { filename: "IMG_5475.jpg" },
+      { filename: "IMG_5519.jpg" },
+      { filename: "IMG_8200.jpg" },
+      { filename: "IMG_8299.jpg" },
+      { filename: "IMG_8301.jpg" }
     ];
 
     const galleryGrid = document.getElementById("gallery-grid");
+    const galleryItems = [];
 
-    portfolioPhotos.forEach(function(filename, index) {
+    portfolioPhotos.forEach(function(photo, index) {
       const number = String(index + 1).padStart(2, "0");
-      const path = "images/" + filename;
+      const path = "images/" + photo.filename;
       const item = document.createElement("button");
 
       item.className = "gallery-item";
       item.type = "button";
       item.dataset.title = "Photography " + number;
       item.dataset.image = path;
+      item.dataset.index = String(index);
       item.setAttribute("aria-label", "Open football photograph " + number);
       item.innerHTML = '<img src="' + path + '" alt="Football photograph ' + number + '" loading="lazy">';
 
+      const galleryImage = item.querySelector("img");
+
+      // Use each image's natural aspect ratio, so portrait and landscape images keep their shape.
+      galleryImage.addEventListener("load", function() {
+        if (galleryImage.naturalWidth && galleryImage.naturalHeight) {
+          galleryImage.style.aspectRatio =
+            galleryImage.naturalWidth + " / " + galleryImage.naturalHeight;
+        }
+      });
+
+      item.addEventListener("click", function() {
+        openLightbox(item);
+      });
+
       galleryGrid.appendChild(item);
+      galleryItems.push(item);
+
+      if (galleryImage.complete && galleryImage.naturalWidth && galleryImage.naturalHeight) {
+        galleryImage.style.aspectRatio =
+          galleryImage.naturalWidth + " / " + galleryImage.naturalHeight;
+      }
     });
 
+    // LIGHTBOX CONTROLS
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxCounter = document.getElementById("lightbox-counter");
     const closeButton = document.getElementById("lightbox-close");
+    const previousButton = document.getElementById("lightbox-prev");
+    const nextButton = document.getElementById("lightbox-next");
+
+    let currentLightboxIndex = 0;
+    let lastFocusedItem = null;
+
+    function visibleGalleryItems() {
+      return galleryItems;
+    }
+
+    function showLightboxItem(index) {
+      const visibleItems = visibleGalleryItems();
+      if (!visibleItems.length) return;
+
+      currentLightboxIndex = (index + visibleItems.length) % visibleItems.length;
+      const item = visibleItems[currentLightboxIndex];
+
+      lightboxImage.src = item.dataset.image;
+      lightboxImage.alt = item.dataset.title || "Football photograph";
+      lightboxCaption.textContent = item.dataset.title || "The VZN portfolio";
+      lightboxCounter.textContent =
+        String(currentLightboxIndex + 1).padStart(2, "0") +
+        " / " +
+        String(visibleItems.length).padStart(2, "0");
+    }
 
     function openLightbox(item) {
-      lightboxImage.src = item.dataset.image;
-      lightboxImage.alt = item.dataset.title || "";
-      lightboxCaption.textContent = item.dataset.title || "";
+      const visibleItems = visibleGalleryItems();
+      lastFocusedItem = item;
+
+      showLightboxItem(visibleItems.indexOf(item));
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -880,35 +1276,40 @@
       lightbox.setAttribute("aria-hidden", "true");
       lightboxImage.src = "";
       document.body.style.overflow = "";
+
+      if (lastFocusedItem) lastFocusedItem.focus();
     }
 
-    document.querySelectorAll(".gallery-item").forEach(function(item) {
-      item.addEventListener("click", function() {
-        openLightbox(item);
-      });
-    });
+    function moveLightbox(direction) {
+      showLightboxItem(currentLightboxIndex + direction);
+    }
 
     closeButton.addEventListener("click", closeLightbox);
+    previousButton.addEventListener("click", function() { moveLightbox(-1); });
+    nextButton.addEventListener("click", function() { moveLightbox(1); });
 
     lightbox.addEventListener("click", function(event) {
       if (event.target === lightbox) closeLightbox();
     });
 
     document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+      if (!lightbox.classList.contains("open")) return;
+
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") moveLightbox(-1);
+      if (event.key === "ArrowRight") moveLightbox(1);
     });
 
+    // The enquiry form creates an email draft; it doesn't send or store information automatically.
     const bookingForm = document.getElementById("booking-form");
 
     bookingForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
       const formData = new FormData(bookingForm);
-      const value = function(key) {
-        return (formData.get(key) || "Not provided").toString().trim();
-      };
-
+      const value = (key) => (formData.get(key) || "Not provided").toString().trim();
       const subject = "Photography Enquiry - " + value("shoot_type");
+
       const body = [
         "New photography enquiry via The VZN website",
         "",
