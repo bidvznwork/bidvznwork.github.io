@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -248,6 +249,10 @@
       transition: opacity .45s ease, visibility .45s ease;
       cursor: pointer;
       background: #080808;
+      border: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .carousel-slide.active {
@@ -262,25 +267,10 @@
       object-fit: contain;
     }
 
-    .carousel-slide::after {
-      content: "";
-      position: absolute;
-      inset: 50% 0 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.5));
-      pointer-events: none;
-    }
+    /* HIDE ALL FEATURED PHOTO CAPTIONS */
 
     .carousel-caption {
-      position: absolute;
-      z-index: 2;
-      left: 28px;
-      bottom: 24px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: white;
-      pointer-events: none;
+      display: none !important;
     }
 
     .carousel-arrow {
@@ -401,28 +391,15 @@
       transition: transform .5s ease, opacity .3s ease;
     }
 
-    .gallery-item:hover img { transform: scale(1.045); opacity: .75; }
+    .gallery-item:hover img { transform: scale(1.045); opacity: .9; }
 
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 22px;
-      background: linear-gradient(0deg, rgba(0,0,0,.8), transparent 65%);
-      pointer-events: none;
+    /* HIDE PORTFOLIO PHOTO LABELS AND OVERLAYS COMPLETELY */
+
+    .gallery-overlay,
+    .gallery-category,
+    .gallery-title {
+      display: none !important;
     }
-
-    .gallery-category {
-      color: #4D8DFF;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-    }
-
-    .gallery-title { font-size: 20px; font-weight: 700; text-transform: uppercase; }
 
     /* LIGHTBOX */
 
@@ -587,7 +564,6 @@
       .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
       .gallery-title { font-size: 16px; }
       .gallery-overlay { padding: 14px; }
-      .carousel-caption { left: 18px; bottom: 16px; }
       .carousel-arrow { width: 40px; height: 40px; }
       .carousel-arrow.prev { left: 10px; }
       .carousel-arrow.next { right: 10px; }
@@ -616,7 +592,6 @@
       .carousel-stage { height: 430px; }
       .carousel-footer { padding: 14px 12px; }
       .carousel-dots { gap: 7px; }
-      .carousel-caption { font-size: 10px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -787,126 +762,36 @@
         </div>
 
         <div class="gallery-grid" id="gallery-grid">
-          <button class="gallery-item" data-category="matchday" data-title="Photo 01" data-image="images/IMG_0620.jpg">
-            <img src="images/IMG_0620.jpg" alt="Football photograph 1" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 01</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 02" data-image="images/IMG_0622.jpg">
-            <img src="images/IMG_0622.jpg" alt="Football photograph 2" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 02</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 03" data-image="images/IMG_0625.jpg">
-            <img src="images/IMG_0625.jpg" alt="Football photograph 3" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 03</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 04" data-image="images/IMG_1138.jpg">
-            <img src="images/IMG_1138.jpg" alt="Football photograph 4" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 04</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 05" data-image="images/IMG_1151.jpg">
-            <img src="images/IMG_1151.jpg" alt="Football photograph 5" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 05</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 06" data-image="images/IMG_1257.jpg">
-            <img src="images/IMG_1257.jpg" alt="Football photograph 6" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 06</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 07" data-image="images/IMG_1306.jpg">
-            <img src="images/IMG_1306.jpg" alt="Football photograph 7" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 07</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 08" data-image="images/IMG_2771.jpg">
-            <img src="images/IMG_2771.jpg" alt="Football photograph 8" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 08</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 09" data-image="images/IMG_3609.jpg">
-            <img src="images/IMG_3609.jpg" alt="Football photograph 9" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 09</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 10" data-image="images/IMG_3649.jpg">
-            <img src="images/IMG_3649.jpg" alt="Football photograph 10" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 10</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 11" data-image="images/IMG_3652.jpg">
-            <img src="images/IMG_3652.jpg" alt="Football photograph 11" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 11</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 12" data-image="images/IMG_3734.jpg">
-            <img src="images/IMG_3734.jpg" alt="Football photograph 12" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 12</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 13" data-image="images/IMG_3738.jpg">
-            <img src="images/IMG_3738.jpg" alt="Football photograph 13" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 13</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 14" data-image="images/IMG_3774.jpg">
-            <img src="images/IMG_3774.jpg" alt="Football photograph 14" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 14</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 15" data-image="images/IMG_3775.jpg">
-            <img src="images/IMG_3775.jpg" alt="Football photograph 15" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 15</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 16" data-image="images/IMG_6942.jpg">
-            <img src="images/IMG_6942.jpg" alt="Football photograph 16" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 16</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 17" data-image="images/IMG_6951.jpg">
-            <img src="images/IMG_6951.jpg" alt="Football photograph 17" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 17</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 18" data-image="images/IMG_6955.jpg">
-            <img src="images/IMG_6955.jpg" alt="Football photograph 18" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 18</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 19" data-image="images/IMG_9374.jpg">
-            <img src="images/IMG_9374.jpg" alt="Football photograph 19" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 19</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 20" data-image="images/IMG_9410.jpg">
-            <img src="images/IMG_9410.jpg" alt="Football photograph 20" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 20</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 21" data-image="images/IMG_9415.jpg">
-            <img src="images/IMG_9415.jpg" alt="Football photograph 21" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 21</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 22" data-image="images/IMG_4984.jpg">
-            <img src="images/IMG_4984.jpg" alt="Football photograph 22" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 22</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 23" data-image="images/IMG_5144.jpg">
-            <img src="images/IMG_5144.jpg" alt="Football photograph 23" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 23</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 24" data-image="images/IMG_5187.jpg">
-            <img src="images/IMG_5187.jpg" alt="Football photograph 24" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 24</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 25" data-image="images/IMG_5446.jpg">
-            <img src="images/IMG_5446.jpg" alt="Football photograph 25" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 25</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 26" data-image="images/IMG_5475.jpg">
-            <img src="images/IMG_5475.jpg" alt="Football photograph 26" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 26</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 27" data-image="images/IMG_5519.jpg">
-            <img src="images/IMG_5519.jpg" alt="Football photograph 27" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 27</span></span>
-          </button>
-          <button class="gallery-item" data-category="matchday" data-title="Photo 28" data-image="images/IMG_8200.jpg">
-            <img src="images/IMG_8200.jpg" alt="Football photograph 28" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 28</span></span>
-          </button>
-          <button class="gallery-item" data-category="portraits" data-title="Photo 29" data-image="images/IMG_8299.jpg">
-            <img src="images/IMG_8299.jpg" alt="Football photograph 29" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 29</span></span>
-          </button>
-          <button class="gallery-item" data-category="details" data-title="Photo 30" data-image="images/IMG_8301.jpg">
-            <img src="images/IMG_8301.jpg" alt="Football photograph 30" loading="lazy">
-            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 30</span></span>
-          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 01" data-image="images/IMG_0620.jpg"><img src="images/IMG_0620.jpg" alt="Football photograph 1" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 01</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 02" data-image="images/IMG_0622.jpg"><img src="images/IMG_0622.jpg" alt="Football photograph 2" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 02</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 03" data-image="images/IMG_0625.jpg"><img src="images/IMG_0625.jpg" alt="Football photograph 3" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 03</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 04" data-image="images/IMG_1138.jpg"><img src="images/IMG_1138.jpg" alt="Football photograph 4" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 04</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 05" data-image="images/IMG_1151.jpg"><img src="images/IMG_1151.jpg" alt="Football photograph 5" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 05</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 06" data-image="images/IMG_1257.jpg"><img src="images/IMG_1257.jpg" alt="Football photograph 6" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 06</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 07" data-image="images/IMG_1306.jpg"><img src="images/IMG_1306.jpg" alt="Football photograph 7" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 07</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 08" data-image="images/IMG_2771.jpg"><img src="images/IMG_2771.jpg" alt="Football photograph 8" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 08</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 09" data-image="images/IMG_3609.jpg"><img src="images/IMG_3609.jpg" alt="Football photograph 9" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 09</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 10" data-image="images/IMG_3649.jpg"><img src="images/IMG_3649.jpg" alt="Football photograph 10" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 10</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 11" data-image="images/IMG_3652.jpg"><img src="images/IMG_3652.jpg" alt="Football photograph 11" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 11</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 12" data-image="images/IMG_3734.jpg"><img src="images/IMG_3734.jpg" alt="Football photograph 12" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 12</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 13" data-image="images/IMG_3738.jpg"><img src="images/IMG_3738.jpg" alt="Football photograph 13" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 13</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 14" data-image="images/IMG_3774.jpg"><img src="images/IMG_3774.jpg" alt="Football photograph 14" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 14</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 15" data-image="images/IMG_3775.jpg"><img src="images/IMG_3775.jpg" alt="Football photograph 15" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 15</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 16" data-image="images/IMG_6942.jpg"><img src="images/IMG_6942.jpg" alt="Football photograph 16" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 16</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 17" data-image="images/IMG_6951.jpg"><img src="images/IMG_6951.jpg" alt="Football photograph 17" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 17</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 18" data-image="images/IMG_6955.jpg"><img src="images/IMG_6955.jpg" alt="Football photograph 18" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 18</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 19" data-image="images/IMG_9374.jpg"><img src="images/IMG_9374.jpg" alt="Football photograph 19" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 19</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 20" data-image="images/IMG_9410.jpg"><img src="images/IMG_9410.jpg" alt="Football photograph 20" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 20</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 21" data-image="images/IMG_9415.jpg"><img src="images/IMG_9415.jpg" alt="Football photograph 21" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 21</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 22" data-image="images/IMG_4984.jpg"><img src="images/IMG_4984.jpg" alt="Football photograph 22" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 22</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 23" data-image="images/IMG_5144.jpg"><img src="images/IMG_5144.jpg" alt="Football photograph 23" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 23</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 24" data-image="images/IMG_5187.jpg"><img src="images/IMG_5187.jpg" alt="Football photograph 24" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 24</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 25" data-image="images/IMG_5446.jpg"><img src="images/IMG_5446.jpg" alt="Football photograph 25" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 25</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 26" data-image="images/IMG_5475.jpg"><img src="images/IMG_5475.jpg" alt="Football photograph 26" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 26</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 27" data-image="images/IMG_5519.jpg"><img src="images/IMG_5519.jpg" alt="Football photograph 27" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 27</span></span></button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 28" data-image="images/IMG_8200.jpg"><img src="images/IMG_8200.jpg" alt="Football photograph 28" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 28</span></span></button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 29" data-image="images/IMG_8299.jpg"><img src="images/IMG_8299.jpg" alt="Football photograph 29" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 29</span></span></button>
+          <button class="gallery-item" data-category="details" data-title="Photo 30" data-image="images/IMG_8301.jpg"><img src="images/IMG_8301.jpg" alt="Football photograph 30" loading="lazy"><span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 30</span></span></button>
         </div>
 
         <div style="text-align:center; margin-top:45px;">
@@ -1158,7 +1043,9 @@
 
       lightboxImage.src = image;
       lightboxImage.alt = title || "Football photograph";
-      lightboxCaption.textContent = title || "";
+
+      // Hide the title in the lightbox as well.
+      lightboxCaption.textContent = "";
 
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
@@ -1200,3 +1087,4 @@
   </script>
 </body>
 </html>
+```
