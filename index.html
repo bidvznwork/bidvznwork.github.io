@@ -591,6 +591,146 @@
       gap: 14px;
     }
 
+    /* CLUBS & ORGANISATIONS */
+
+    .clubs {
+      background: #090909;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 38px;
+    }
+
+    .club-card {
+      min-height: 175px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 22px 14px;
+      background: #111;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+
+    .club-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .club-card img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+    }
+
+    .club-card span {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    /* BOOKING / ENQUIRY FORM */
+
+    .booking-form {
+      max-width: 850px;
+      margin: 55px auto 0;
+      padding: clamp(22px, 4vw, 38px);
+      background: #111;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .booking-form h3 {
+      font-size: clamp(23px, 3vw, 32px);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .booking-form .form-intro {
+      margin: 0 0 28px;
+      max-width: none;
+      text-align: left;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .form-field.full-width { grid-column: 1 / -1; }
+
+    .form-field label {
+      color: #eee;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 13px 14px;
+      color: #fff;
+      background: #090909;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 0;
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-field textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-field select option { background: #111; color: #fff; }
+
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+      margin: 0;
+      text-align: left;
+      max-width: 470px;
+    }
+
     /* FOOTER */
 
     footer {
@@ -701,6 +841,10 @@
         gap: 40px;
       }
 
+      .clubs-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -801,6 +945,29 @@
         aspect-ratio: 4 / 3;
       }
 
+      .clubs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .club-card {
+        min-height: 145px;
+        padding: 16px 10px;
+      }
+
+      .club-card img {
+        width: 68px;
+        height: 68px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full-width {
+        grid-column: auto;
+      }
+
       .footer-inner {
         align-items: flex-start;
         flex-direction: column;
@@ -845,6 +1012,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#clubs">Clubs</a></li>
           <li><a href="#contact" class="nav-contact">Contact</a></li>
         </ul>
       </nav>
@@ -881,6 +1049,7 @@
         </div>
 
       </div>
+
       <div class="hero-visual" role="img" aria-label="Football photography hero image"></div>
     </section>
 
@@ -893,6 +1062,7 @@
           <span>The moments that matter</span><span class="marquee-star">✳</span>
           <span>Football Photography</span><span class="marquee-star">✳</span>
         </div>
+
         <div class="marquee-group">
           <span>Football Photography</span><span class="marquee-star">✳</span>
           <span>Beyond the 90</span><span class="marquee-star">✳</span>
@@ -905,6 +1075,7 @@
     <!-- AUTOMATICALLY SCROLLING PORTFOLIO PHOTOS -->
     <div class="photo-marquee" aria-label="Scrolling selection of football photography">
       <div class="photo-marquee-track">
+
         <div class="photo-marquee-group" aria-hidden="false">
           <img src="images/IMG_3163.jpg" alt="Football photography selection 1" loading="lazy">
           <img src="images/IMG_3682 2 (1).jpg" alt="Football photography selection 2" loading="lazy">
@@ -934,6 +1105,7 @@
           <img src="images/IMG_3652.jpg" alt="" loading="lazy">
           <img src="images/IMG_3734.jpg" alt="" loading="lazy">
         </div>
+
       </div>
     </div>
 
@@ -990,8 +1162,8 @@
 
           <p>
             I've worked with clubs including <strong>Punjab United,
-            SE Dons, Hashtag United and Croydon Athletic</strong>, through these
-            opportunities I've developed my style and experience in football media.
+            SE Dons, Hashtag United, Croydon Athletic and Inspire Sports Academy</strong>.
+            Through these opportunities I've developed my style and experience in football media.
           </p>
 
           <div class="about-tags">
@@ -1003,11 +1175,10 @@
         </div>
 
         <div class="about-feature">
-          <!-- Your chosen image sits directly above the statement -->
           <img
             class="about-feature-image"
             src="images/IMG_1841.png"
-            alt="Football photography by BIDVZN"
+            alt="Football action captured by BIDVZN"
             loading="lazy"
           >
 
@@ -1017,6 +1188,52 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- CLUBS & ORGANISATIONS -->
+    <section class="clubs" id="clubs">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Experience</p>
+            <h2>Clubs &amp; Organisations.</h2>
+          </div>
+
+          <p class="section-intro">
+            A selection of the clubs and organisations I've had the opportunity to work with through football photography.
+          </p>
+        </div>
+
+        <div class="clubs-grid">
+
+          <div class="club-card">
+            <img src="images/punjab.png" alt="Punjab United badge" loading="lazy">
+            <span>Punjab United</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/dons.png" alt="SE Dons badge" loading="lazy">
+            <span>SE Dons</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/hashtag.png" alt="Hashtag United badge" loading="lazy">
+            <span>Hashtag United</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/croydon.png" alt="Croydon Athletic badge" loading="lazy">
+            <span>Croydon Athletic</span>
+          </div>
+
+          <div class="club-card">
+            <img src="images/inspire.png" alt="Inspire Sports Academy badge" loading="lazy">
+            <span>Inspire Sports Academy</span>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -1032,7 +1249,7 @@
           Football is so much more than a game.
           It's emotion, identity and moments that'll be remembered for a lifetime.
           <strong>It's my job to make sure those moments never fade.</strong>
-          Every match has a story. Let me capture yours.
+          Every match has a different story. Let me capture yours.
           Contact now via <strong>Email or DM</strong> for more information.
         </p>
 
@@ -1058,6 +1275,69 @@
           </a>
 
         </div>
+
+        <form class="booking-form" id="booking-form">
+          <h3>Book a Shoot / Make an Enquiry</h3>
+
+          <p class="form-intro">
+            Tell me a little about your fixture or project and I'll get back to you as soon as possible.
+          </p>
+
+          <div class="form-grid">
+
+            <div class="form-field">
+              <label for="booking-name">Your name *</label>
+              <input id="booking-name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="booking-email">Email address *</label>
+              <input id="booking-email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="booking-club">Club / organisation</label>
+              <input id="booking-club" name="club" type="text" placeholder="Your club or organisation">
+            </div>
+
+            <div class="form-field">
+              <label for="booking-type">Type of shoot *</label>
+              <select id="booking-type" name="shoot_type" required>
+                <option value="" disabled selected>Select a shoot type</option>
+                <option>Football matchday</option>
+                <option>Training session</option>
+                <option>Player portraits</option>
+                <option>Club / team content</option>
+                <option>Other photography enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="booking-date">Preferred date</label>
+              <input id="booking-date" name="date" type="date">
+            </div>
+
+            <div class="form-field">
+              <label for="booking-location">Venue / location</label>
+              <input id="booking-location" name="location" type="text" placeholder="Stadium, town or venue">
+            </div>
+
+            <div class="form-field full-width">
+              <label for="booking-details">Tell me more *</label>
+              <textarea id="booking-details" name="details" placeholder="Fixture details, timings, what coverage you're looking for, etc." required></textarea>
+            </div>
+
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="button button-primary">Send Enquiry ↗</button>
+
+            <p class="form-note">
+              Submitting opens your email app with the enquiry filled in, ready for you to send.
+              Your details aren't stored on this website.
+            </p>
+          </div>
+        </form>
 
       </div>
     </section>
@@ -1103,8 +1383,7 @@
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-content">
 
-      <button class="lightbox-close" id="lightbox-close"
-              aria-label="Close image">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image">
         &times;
       </button>
 
@@ -1120,37 +1399,14 @@
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Your portfolio images. Keep these filenames inside the images folder.
+    // Your actual portfolio images. Keep these filenames inside the images folder.
     const portfolioPhotos = [
-      "IMG_3163.jpg",
-      "IMG_3682 2 (1).jpg",
-      "IMG_6641 2 (1).jpg",
-      "IMG_1138.jpg",
-      "IMG_1151.jpg",
-      "IMG_1257.jpg",
-      "IMG_1306.jpg",
-      "IMG_2771.jpg",
-      "IMG_3609.jpg",
-      "IMG_3649.jpg",
-      "IMG_3652.jpg",
-      "IMG_3734.jpg",
-      "IMG_3738.jpg",
-      "IMG_3774.jpg",
-      "IMG_3775.jpg",
-      "IMG_6942.jpg",
-      "IMG_6951.jpg",
-      "IMG_6955.jpg",
-      "IMG_9374.jpg",
-      "IMG_9410.jpg",
-      "IMG_9415.jpg",
-      "IMG_4984.jpg",
-      "IMG_5144.jpg",
-      "IMG_5187.jpg",
-      "IMG_5446.jpg",
-      "IMG_5475.jpg",
-      "IMG_5519.jpg",
-      "IMG_8200.jpg",
-      "IMG_8299.jpg",
+      "IMG_3163.jpg", "IMG_3682 2 (1).jpg", "IMG_6641 2 (1).jpg", "IMG_1138.jpg",
+      "IMG_1151.jpg", "IMG_1257.jpg", "IMG_1306.jpg", "IMG_2771.jpg", "IMG_3609.jpg",
+      "IMG_3649.jpg", "IMG_3652.jpg", "IMG_3734.jpg", "IMG_3738.jpg", "IMG_3774.jpg",
+      "IMG_3775.jpg", "IMG_6942.jpg", "IMG_6951.jpg", "IMG_6955.jpg", "IMG_9374.jpg",
+      "IMG_9410.jpg", "IMG_9415.jpg", "IMG_4984.jpg", "IMG_5144.jpg", "IMG_5187.jpg",
+      "IMG_5446.jpg", "IMG_5475.jpg", "IMG_5519.jpg", "IMG_8200.jpg", "IMG_8299.jpg",
       "IMG_8301.jpg"
     ];
 
@@ -1166,16 +1422,15 @@
       item.dataset.title = "Photography " + number;
       item.dataset.image = path;
       item.setAttribute("aria-label", "Open football photograph " + number);
-
-      item.innerHTML =
-        '<img src="' + path + '" alt="Football photograph ' +
-        number + '" loading="lazy">';
+      item.innerHTML = '<img src="' + path + '" alt="Football photograph ' + number + '" loading="lazy">';
 
       galleryGrid.appendChild(item);
     });
 
-    // Open and close the photo lightbox
+    // All portfolio photos remain visible; clicking any photo opens the lightbox.
     const galleryItems = document.querySelectorAll(".gallery-item");
+
+    // Open and close the photo lightbox
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxCaption = document.getElementById("lightbox-caption");
@@ -1217,6 +1472,35 @@
       if (event.key === "Escape" && lightbox.classList.contains("open")) {
         closeLightbox();
       }
+    });
+
+    // Booking form: creates an email draft; it does not send or store anything automatically.
+    const bookingForm = document.getElementById("booking-form");
+
+    bookingForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(bookingForm);
+      const value = (key) => (formData.get(key) || "Not provided").toString().trim();
+
+      const subject = "Photography Enquiry - " + value("shoot_type");
+
+      const body = [
+        "New photography enquiry via The VZN website", "",
+        "Name: " + value("name"),
+        "Email: " + value("email"),
+        "Club / organisation: " + value("club"),
+        "Type of shoot: " + value("shoot_type"),
+        "Preferred date: " + value("date"),
+        "Venue / location: " + value("location"), "",
+        "Details:", value("details")
+      ].join("\n");
+
+      window.location.href =
+        "mailto:bidvzn.work@gmail.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
     });
   </script>
 
