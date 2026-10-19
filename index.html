@@ -1,14 +1,12 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>The VZN | Football Photography — Beyond the 90</title>
   <meta name="description" content="The VZN — football photography capturing the emotion, identity and moments beyond the 90. Available for matchday photography and media enquiries.">
   <meta name="theme-color" content="#090909">
-
   <meta property="og:title" content="The VZN — Beyond the 90">
   <meta property="og:description" content="Football is more than a game. Capturing the moments that matter.">
   <meta property="og:type" content="website">
@@ -94,6 +92,14 @@
       object-position: left center;
     }
 
+    .logo-fallback {
+      display: none;
+      color: white;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -129,7 +135,12 @@
       overflow: hidden;
       border-bottom: 1px solid var(--line);
       background:
-        linear-gradient(90deg, rgba(9,9,9,0.98) 0%, rgba(9,9,9,0.80) 52%, rgba(9,9,9,0.30) 100%),
+        linear-gradient(
+          90deg,
+          rgba(9,9,9,0.98) 0%,
+          rgba(9,9,9,0.80) 52%,
+          rgba(9,9,9,0.30) 100%
+        ),
         url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=85")
         center 45% / cover no-repeat;
     }
@@ -635,7 +646,10 @@
   <header>
     <div class="container nav">
       <a class="logo-image" href="#top" aria-label="The VZN home">
-        <img src="images/bid.png" alt="The VZN — Beyond the 90">
+        <img src="images/bid.png"
+             alt="The VZN — Beyond the 90"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="logo-fallback">THE VZN</span>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
@@ -686,10 +700,14 @@
         </div>
 
         <div class="filters" role="group" aria-label="Filter photographs">
-          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All work</button>
-          <button class="filter-button" type="button" data-filter="action" aria-pressed="false">In action</button>
-          <button class="filter-button" type="button" data-filter="emotion" aria-pressed="false">Emotion</button>
-          <button class="filter-button" type="button" data-filter="the-game" aria-pressed="false">The game</button>
+          <button class="filter-button active" type="button"
+                  data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter-button" type="button"
+                  data-filter="action" aria-pressed="false">In action</button>
+          <button class="filter-button" type="button"
+                  data-filter="emotion" aria-pressed="false">Emotion</button>
+          <button class="filter-button" type="button"
+                  data-filter="the-game" aria-pressed="false">The game</button>
         </div>
 
         <div class="gallery">
@@ -698,7 +716,7 @@
             data-image="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1800&q=90"
             data-caption="In action">
             <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85"
-              alt="Football match on the pitch" loading="lazy">
+                 alt="Football match on the pitch" loading="lazy">
             <span class="photo-overlay">
               <strong>In action</strong>
               <span>01 / Matchday</span>
@@ -709,7 +727,7 @@
             data-image="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=90"
             data-caption="The atmosphere">
             <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85"
-              alt="Football stadium atmosphere" loading="lazy">
+                 alt="Football stadium atmosphere" loading="lazy">
             <span class="photo-overlay">
               <strong>The atmosphere</strong>
               <span>02 / Emotion</span>
@@ -720,7 +738,7 @@
             data-image="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1800&q=90"
             data-caption="The game">
             <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
-              alt="Footballers competing during a match" loading="lazy">
+                 alt="Footballers competing during a match" loading="lazy">
             <span class="photo-overlay">
               <strong>The game</strong>
               <span>03 / The details</span>
@@ -731,7 +749,7 @@
             data-image="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1800&q=90"
             data-caption="The battle">
             <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=85"
-              alt="Football action on the pitch" loading="lazy">
+                 alt="Football action on the pitch" loading="lazy">
             <span class="photo-overlay">
               <strong>The battle</strong>
               <span>04 / In action</span>
@@ -742,7 +760,7 @@
             data-image="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1800&q=90"
             data-caption="More than a game">
             <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=85"
-              alt="Football and the emotion of the game" loading="lazy">
+                 alt="Football and the emotion of the game" loading="lazy">
             <span class="photo-overlay">
               <strong>More than a game</strong>
               <span>05 / Emotion</span>
@@ -753,7 +771,7 @@
             data-image="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?auto=format&fit=crop&w=1800&q=90"
             data-caption="The details">
             <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?auto=format&fit=crop&w=900&q=85"
-              alt="Football pitch and matchday details" loading="lazy">
+                 alt="Football pitch and matchday details" loading="lazy">
             <span class="photo-overlay">
               <strong>The details</strong>
               <span>06 / The game</span>
@@ -830,7 +848,8 @@
 
         <div class="contact-details">
           <a href="mailto:bidvzn.work@gmail.com">bidvzn.work@gmail.com ↗</a>
-          <a href="https://www.instagram.com/bidvzn/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/bidvzn/"
+             target="_blank" rel="noopener noreferrer">
             Instagram — @bidvzn ↗
           </a>
         </div>
@@ -843,7 +862,10 @@
   <footer>
     <div class="container footer-inner">
       <a class="logo-image" href="#top" aria-label="The VZN home">
-        <img src="images/bid.png" alt="The VZN — Beyond the 90">
+        <img src="images/bid.png"
+             alt="The VZN — Beyond the 90"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="logo-fallback">THE VZN</span>
       </a>
 
       <p class="footer-copy">
@@ -856,12 +878,11 @@
 
   <!-- PHOTO LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog"
-    aria-modal="true" aria-label="Photograph viewer">
+       aria-modal="true" aria-label="Photograph viewer">
     <button class="lightbox-close" id="lightbox-close"
-      type="button" aria-label="Close photograph">×</button>
+            type="button" aria-label="Close photograph">×</button>
 
     <img id="lightbox-image" src="" alt="">
-
     <p class="lightbox-caption" id="lightbox-caption"></p>
   </div>
 
@@ -938,4 +959,3 @@
 
 </body>
 </html>
-```
