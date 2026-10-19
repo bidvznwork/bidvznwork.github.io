@@ -4,28 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The VZN | Football Photography — Beyond the 90</title>
-  <meta name="description" content="The VZN — football photography capturing the emotion, identity and moments beyond the 90. Available for matchday photography and media enquiries.">
   <meta name="theme-color" content="#090909">
-  <meta property="og:title" content="The VZN — Beyond the 90">
-  <meta property="og:description" content="Football is more than a game. Capturing the moments that matter.">
-  <meta property="og:type" content="website">
+  <meta name="description" content="The VZN — football photography beyond the 90. Capturing the moments, emotion and stories of the game.">
+
+  <title>The VZN | Football Photography</title>
 
   <style>
     :root {
       --background: #090909;
       --surface: #111111;
-      --text: #f5f5f5;
-      --muted: #999999;
-      --line: #292929;
+      --text: #ffffff;
+      --muted: #a0a0a0;
       --accent: #d7ff3f;
-      --page-width: 1240px;
+      --border: rgba(255, 255, 255, 0.12);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -45,37 +42,37 @@
       text-decoration: none;
     }
 
+    button {
+      font: inherit;
+    }
+
     img {
       display: block;
       max-width: 100%;
     }
 
-    button {
-      font: inherit;
-    }
-
     .container {
-      width: min(var(--page-width), 90%);
+      width: min(1200px, 90%);
       margin: 0 auto;
     }
 
-    /* HEADER */
+    /* NAVIGATION */
 
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9, 9, 9, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
-      min-height: 82px;
+      min-height: 100px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 25px;
     }
 
     .logo-image {
@@ -85,135 +82,145 @@
     }
 
     .logo-image img {
-      width: 150px;
-      height: auto;
-      max-height: 60px;
+      width: 200px;
+      max-height: 75px;
       object-fit: contain;
       object-position: left center;
-    }
-
-    .logo-fallback {
-      display: none;
-      color: white;
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 2px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 30px;
+      list-style: none;
     }
 
     .nav-links a {
-      color: #c4c4c4;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+      font-size: 13px;
+      color: #dddddd;
       transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: var(--accent);
     }
 
-    .nav-links .contact-link {
-      color: var(--background);
-      background: var(--text);
-      padding: 10px 16px;
-      font-weight: 700;
+    .nav-contact {
+      border: 1px solid var(--accent);
+      padding: 10px 17px;
+      color: var(--accent) !important;
     }
 
-    /* HERO — YOUR OWN HOMEPAGE PHOTO */
+    /* HERO */
 
     .hero {
-      min-height: 76vh;
+      min-height: 690px;
+      min-height: min(780px, calc(100svh - 100px));
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       position: relative;
       overflow: hidden;
-      border-bottom: 1px solid var(--line);
-      background:
+
+      background-color: #171717;
+      background-image:
         linear-gradient(
           90deg,
-          rgba(9, 9, 9, 0.88) 0%,
-          rgba(9, 9, 9, 0.58) 52%,
-          rgba(9, 9, 9, 0.18) 100%
+          rgba(0, 0, 0, 0.84) 0%,
+          rgba(0, 0, 0, 0.48) 55%,
+          rgba(0, 0, 0, 0.15) 100%
         ),
-        url("images/hero.jpg") center 45% / cover no-repeat;
+        linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.75) 0%,
+          transparent 70%
+        ),
+        url("images/hero.jpg.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-content {
-      padding: 100px 0;
-      max-width: 900px;
+      position: relative;
+      z-index: 1;
+      width: min(900px, 90%);
+      margin: 0 auto;
+      padding: 100px 0 95px;
     }
 
     .eyebrow {
       color: var(--accent);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(58px, 11vw, 145px);
-      line-height: 0.86;
-      letter-spacing: -0.085em;
-      font-weight: 900;
+      font-size: clamp(48px, 8vw, 100px);
+      line-height: 0.98;
+      letter-spacing: -5px;
       text-transform: uppercase;
+      max-width: 900px;
     }
 
     .hero h1 span {
-      display: block;
-      color: transparent;
-      -webkit-text-stroke: 1px white;
+      color: var(--accent);
     }
 
-    .hero-copy {
-      max-width: 440px;
-      margin-top: 30px;
-      color: #e0e0e0;
-      font-size: 15px;
+    .hero-description {
+      color: #dedede;
+      font-size: clamp(15px, 2vw, 18px);
+      max-width: 500px;
+      margin-top: 25px;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
+      align-items: center;
+      gap: 15px;
+      margin-top: 35px;
     }
 
     .button {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      padding: 13px 20px;
-      border: 1px solid white;
-      font-size: 11px;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.5px;
       text-transform: uppercase;
+      letter-spacing: 1px;
       transition: 0.2s ease;
+      cursor: pointer;
     }
 
     .button-primary {
-      background: white;
+      background: var(--accent);
       color: #090909;
+      border: 1px solid var(--accent);
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .button-secondary:hover {
+    .button-primary:hover {
       background: white;
-      color: #090909;
+      border-color: white;
     }
 
-    /* SECTION HEADINGS */
+    .button-outline {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: white;
+    }
+
+    .button-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* GENERAL SECTIONS */
 
     section {
       padding: 100px 0;
@@ -221,388 +228,397 @@
 
     .section-heading {
       display: flex;
+      align-items: flex-end;
       justify-content: space-between;
-      align-items: end;
-      gap: 24px;
+      gap: 25px;
       margin-bottom: 35px;
     }
 
-    .section-kicker {
-      color: var(--muted);
+    .section-label {
+      color: var(--accent);
       font-size: 11px;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .section-heading h2,
     .about h2,
     .contact h2 {
       font-size: clamp(34px, 5vw, 58px);
-      line-height: 1;
+      line-height: 1.05;
       letter-spacing: -2px;
       text-transform: uppercase;
     }
 
-    .section-description {
+    .section-intro {
       color: var(--muted);
-      max-width: 340px;
-      font-size: 13px;
+      max-width: 420px;
+      font-size: 14px;
     }
 
-    /* GALLERY FILTERS */
+    .text-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* PORTFOLIO FILTERS */
 
     .filters {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 25px;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
     .filter-button {
-      cursor: pointer;
-      border: 1px solid var(--line);
-      color: #b8b8b8;
       background: transparent;
-      padding: 9px 14px;
-      font-size: 10px;
-      letter-spacing: 1px;
+      color: #aaa;
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      cursor: pointer;
+      font-size: 11px;
       text-transform: uppercase;
+      letter-spacing: 1px;
       transition: 0.2s ease;
     }
 
     .filter-button:hover,
     .filter-button.active {
+      background: var(--accent);
       color: #090909;
-      background: white;
-      border-color: white;
+      border-color: var(--accent);
     }
 
     /* PHOTO GALLERY */
 
-    .gallery {
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      gap: 18px;
     }
 
-    .photo-card {
+    .gallery-item {
       position: relative;
-      aspect-ratio: 3 / 2;
       overflow: hidden;
-      background: var(--surface);
-      border: 0;
+      background: #191919;
+      aspect-ratio: 4 / 5;
       cursor: pointer;
+      border: 0;
+      padding: 0;
       text-align: left;
+      color: white;
+      width: 100%;
     }
 
-    .photo-card img {
+    .gallery-item.hidden {
+      display: none;
+    }
+
+    .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease, opacity 0.3s ease;
     }
 
-    .photo-card:hover img {
-      transform: scale(1.05);
+    .gallery-item:hover img {
+      transform: scale(1.045);
       opacity: 0.75;
     }
 
-    .photo-overlay {
+    .gallery-overlay {
       position: absolute;
-      inset: auto 0 0;
-      padding: 40px 16px 14px;
-      color: white;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-      pointer-events: none;
-    }
-
-    .photo-overlay strong {
-      display: block;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .photo-overlay span {
-      color: #c7c7c7;
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .photo-card[hidden] {
-      display: none;
-    }
-
-    .gallery-note {
-      margin-top: 18px;
-      font-size: 11px;
-      color: #777;
-    }
-
-    /* STATEMENT */
-
-    .statement {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #0e0e0e;
-      text-align: center;
-    }
-
-    .statement p {
-      max-width: 950px;
-      margin: 0 auto;
-      font-size: clamp(28px, 5.5vw, 68px);
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: -2px;
-      text-transform: uppercase;
-    }
-
-    .statement span {
-      color: var(--muted);
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about h2 {
-      max-width: 430px;
-    }
-
-    .about-copy p {
-      color: #b5b5b5;
-      font-size: 15px;
-      margin-bottom: 20px;
-      max-width: 650px;
-    }
-
-    .about-copy strong {
-      color: white;
-    }
-
-    .about-label {
-      display: inline-block;
-      margin-top: 10px;
-      padding-top: 15px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #f1f1f1;
-      color: #090909;
-    }
-
-    .contact .section-kicker {
-      color: #666;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: end;
-    }
-
-    .contact h2 {
-      max-width: 600px;
-      font-size: clamp(44px, 7vw, 84px);
-    }
-
-    .contact-copy {
-      color: #555;
-      font-size: 14px;
-      margin-top: 20px;
-      max-width: 420px;
-    }
-
-    .contact-details {
+      inset: 0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
+      justify-content: flex-end;
+      padding: 22px;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8),
+        transparent 65%
+      );
     }
 
-    .contact-details a {
-      overflow-wrap: anywhere;
-      font-size: 15px;
-      border-bottom: 1px solid #aaa;
-      padding-bottom: 5px;
-    }
-
-    .contact-details a:hover {
-      border-color: #090909;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    footer .logo-image img {
-      width: 125px;
-    }
-
-    .footer-copy {
-      color: #777;
+    .gallery-category {
+      color: var(--accent);
       font-size: 10px;
-      letter-spacing: 1px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .gallery-title {
+      font-size: 20px;
+      font-weight: 700;
       text-transform: uppercase;
     }
 
-    .back-to-top {
-      color: #ccc;
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* PHOTO LIGHTBOX */
+    /* LIGHTBOX */
 
     .lightbox {
-      display: none;
       position: fixed;
       inset: 0;
-      z-index: 200;
-      padding: 25px;
+      z-index: 1000;
       background: rgba(0, 0, 0, 0.96);
+      display: none;
       align-items: center;
       justify-content: center;
+      padding: 25px;
     }
 
     .lightbox.open {
       display: flex;
     }
 
+    .lightbox-content {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .lightbox img {
-      max-width: min(1100px, 90vw);
       max-height: 82vh;
+      max-width: 100%;
       width: auto;
-      height: auto;
       object-fit: contain;
     }
 
     .lightbox-close {
       position: absolute;
-      top: 20px;
-      right: 25px;
-      border: 0;
-      color: white;
+      top: -45px;
+      right: 0;
       background: transparent;
-      font-size: 36px;
+      color: white;
+      border: 0;
+      font-size: 32px;
       cursor: pointer;
     }
 
     .lightbox-caption {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      text-align: center;
+      bottom: -35px;
+      left: 0;
       color: #ccc;
-      font-size: 12px;
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #101010;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-copy p {
+      color: #b7b7b7;
+      font-size: 15px;
+      margin-top: 20px;
+      max-width: 550px;
+    }
+
+    .about-copy strong {
+      color: white;
+    }
+
+    .about-statement {
+      border-left: 3px solid var(--accent);
+      padding: 25px 0 25px 25px;
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .about-statement span {
+      color: var(--accent);
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .about-tags span {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      color: #ccc;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .section-label {
+      margin-bottom: 18px;
+    }
+
+    .contact h2 {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .contact h2 span {
+      color: var(--accent);
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 22px auto 30px;
+      font-size: 14px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer .logo-image img {
+      width: 160px;
+      max-height: 75px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .footer-tagline {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .footer-right {
+      color: var(--muted);
+      font-size: 11px;
+      text-align: right;
+    }
+
+    .footer-social {
+      color: white;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .footer-social:hover {
+      color: var(--accent);
     }
 
     /* MOBILE */
 
-    @media (max-width: 760px) {
+    @media (max-width: 800px) {
       .nav {
-        min-height: 72px;
+        min-height: 82px;
+        gap: 12px;
       }
 
       .logo-image img {
-        width: 120px;
-        max-height: 48px;
+        width: 145px;
+        max-height: 60px;
       }
 
       .nav-links {
-        gap: 14px;
+        gap: 15px;
       }
 
       .nav-links a {
-        font-size: 10px;
-        letter-spacing: 0.5px;
+        font-size: 11px;
       }
 
-      .nav-links .contact-link {
-        padding: 8px 10px;
+      .nav-contact {
+        padding: 7px 10px;
       }
 
       .hero {
-        min-height: 68vh;
+        min-height: 620px;
+        min-height: min(720px, calc(100svh - 82px));
         background-position: 58% center;
       }
 
       .hero-content {
-        padding: 75px 0;
+        padding: 80px 0 65px;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
       }
 
       section {
-        padding: 70px 0;
+        padding: 75px 0;
       }
 
-      .section-heading {
-        align-items: start;
-        flex-direction: column;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-      }
-
-      .photo-overlay {
-        padding: 28px 10px 9px;
-      }
-
-      .photo-overlay strong {
-        font-size: 10px;
-      }
-
-      .photo-overlay span {
-        font-size: 9px;
-      }
-
-      .about-grid,
-      .contact-grid {
+      .about-layout {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 40px;
       }
 
-      .statement p {
-        letter-spacing: -1px;
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gallery-title {
+        font-size: 16px;
+      }
+
+      .gallery-overlay {
+        padding: 14px;
       }
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 500px) {
       .container {
         width: 92%;
       }
 
+      .nav {
+        min-height: 76px;
+      }
+
       .logo-image img {
-        width: 100px;
+        width: 115px;
+        max-height: 52px;
       }
 
       .nav-links {
@@ -610,19 +626,51 @@
       }
 
       .nav-links a {
-        font-size: 9px;
+        font-size: 10px;
       }
 
-      .gallery {
+      .nav-links li:nth-child(2) {
+        display: none;
+      }
+
+      .nav-contact {
+        padding: 7px 9px;
+      }
+
+      .hero {
+        min-height: 610px;
+        min-height: min(700px, calc(100svh - 76px));
+      }
+
+      .hero h1 {
+        font-size: clamp(46px, 12vw, 65px);
+        letter-spacing: -2.5px;
+      }
+
+      .hero-content {
+        padding-bottom: 55px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
-      .photo-card {
-        aspect-ratio: 3 / 2;
+      .gallery-item {
+        aspect-ratio: 4 / 4.5;
       }
 
       .footer-inner {
-        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-right {
+        text-align: left;
       }
     }
 
@@ -635,254 +683,249 @@
       *::before,
       *::after {
         transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
-<body id="top">
+<body>
 
-  <!-- HEADER -->
+  <!-- NAVIGATION -->
   <header>
     <div class="container nav">
-      <a class="logo-image" href="#top" aria-label="The VZN home">
-        <img
-          src="images/bid.png"
-          alt="The VZN — Beyond the 90"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-        >
-        <span class="logo-fallback">THE VZN</span>
+
+      <a href="#home" class="logo-image" aria-label="The VZN home">
+        <img src="images/bid.png" alt="The VZN logo">
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a class="contact-link" href="#contact">Enquiries</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact" class="nav-contact">Contact</a></li>
+        </ul>
       </nav>
+
     </div>
   </header>
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-content">
-        <p class="eyebrow">Football photography · The VZN</p>
+    <!-- HERO / HOMEPAGE -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+
+        <p class="eyebrow">Football Photography · Beyond the 90</p>
 
         <h1>
-          Beyond
-          <span>The 90.</span>
+          Capturing<br>
+          The <span>Game.</span>
         </h1>
 
-        <p class="hero-copy">
-          From late winners and cupsets to the emotion in between.
-          Football photography capturing the moments that make the game.
+        <p class="hero-description">
+          The moments, emotion and stories that make football more than
+          just a game. Football photography by The VZN.
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#work">Explore the work ↘</a>
-          <a class="button button-secondary" href="#contact">Work with me</a>
+          <a href="#portfolio" class="button button-primary">
+            View Portfolio
+          </a>
+
+          <a href="#contact" class="button button-outline">
+            Work With Me
+          </a>
         </div>
+
       </div>
     </section>
 
-    <!-- WORK / GALLERY -->
-    <section id="work">
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
       <div class="container">
+
         <div class="section-heading">
           <div>
-            <p class="section-kicker">01 / The portfolio</p>
-            <h2>Captured in the game.</h2>
+            <p class="section-label">Selected Work</p>
+            <h2>The Portfolio.</h2>
           </div>
 
-          <p class="section-description">
-            Every match has a story. These are the moments, people and
-            emotions that bring football to life.
+          <p class="section-intro">
+            From matchday intensity to the details in between.
+            A collection of football moments captured through my lens.
           </p>
         </div>
 
-        <div class="filters" role="group" aria-label="Filter photographs">
-          <button class="filter-button active" type="button"
-            data-filter="all" aria-pressed="true">All work</button>
-          <button class="filter-button" type="button"
-            data-filter="action" aria-pressed="false">In action</button>
-          <button class="filter-button" type="button"
-            data-filter="emotion" aria-pressed="false">Emotion</button>
-          <button class="filter-button" type="button"
-            data-filter="the-game" aria-pressed="false">The game</button>
+        <div class="filters" aria-label="Filter portfolio">
+          <button class="filter-button active" data-filter="all" aria-pressed="true">
+            All Work
+          </button>
+
+          <button class="filter-button" data-filter="matchday" aria-pressed="false">
+            Matchday
+          </button>
+
+          <button class="filter-button" data-filter="portraits" aria-pressed="false">
+            Portraits
+          </button>
+
+          <button class="filter-button" data-filter="details" aria-pressed="false">
+            Details
+          </button>
         </div>
 
-        <div class="gallery">
+        <div class="gallery-grid">
 
-          <button class="photo-card" type="button"
-            data-category="action"
-            data-image="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1800&q=90"
-            data-caption="In action">
+          <!-- Replace these sample images with your own photos -->
+          <button class="gallery-item" data-category="matchday"
+                  data-title="Matchday Moments"
+                  data-image="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85">
             <img
-              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=85"
-              alt="Football match on the pitch"
-              loading="lazy"
-            >
-            <span class="photo-overlay">
-              <strong>In action</strong>
-              <span>01 / Matchday</span>
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
+              alt="Football matchday atmosphere"
+              loading="lazy">
+            <span class="gallery-overlay">
+              <span class="gallery-category">Matchday</span>
+              <span class="gallery-title">Matchday Moments</span>
             </span>
           </button>
 
-          <button class="photo-card" type="button"
-            data-category="emotion"
-            data-image="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1800&q=90"
-            data-caption="The atmosphere">
+          <button class="gallery-item" data-category="portraits"
+                  data-title="Player Portraits"
+                  data-image="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1600&q=85">
             <img
-              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=85"
-              alt="Football stadium atmosphere"
-              loading="lazy"
-            >
-            <span class="photo-overlay">
-              <strong>The atmosphere</strong>
-              <span>02 / Emotion</span>
+              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
+              alt="Football on the pitch"
+              loading="lazy">
+            <span class="gallery-overlay">
+              <span class="gallery-category">Portraits</span>
+              <span class="gallery-title">Player Portraits</span>
             </span>
           </button>
 
-          <button class="photo-card" type="button"
-            data-category="the-game"
-            data-image="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1800&q=90"
-            data-caption="The game">
+          <button class="gallery-item" data-category="details"
+                  data-title="The Details"
+                  data-image="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=85">
             <img
-              src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=85"
-              alt="Footballers competing during a match"
-              loading="lazy"
-            >
-            <span class="photo-overlay">
-              <strong>The game</strong>
-              <span>03 / The details</span>
+              src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
+              alt="Football action and detail"
+              loading="lazy">
+            <span class="gallery-overlay">
+              <span class="gallery-category">Details</span>
+              <span class="gallery-title">The Details</span>
             </span>
           </button>
 
-          <button class="photo-card" type="button"
-            data-category="action"
-            data-image="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1800&q=90"
-            data-caption="The battle">
+          <button class="gallery-item" data-category="matchday"
+                  data-title="The Action"
+                  data-image="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=85">
             <img
-              src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=85"
+              src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80"
               alt="Football action on the pitch"
-              loading="lazy"
-            >
-            <span class="photo-overlay">
-              <strong>The battle</strong>
-              <span>04 / In action</span>
+              loading="lazy">
+            <span class="gallery-overlay">
+              <span class="gallery-category">Matchday</span>
+              <span class="gallery-title">The Action</span>
             </span>
           </button>
 
-          <button class="photo-card" type="button"
-            data-category="emotion"
-            data-image="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1800&q=90"
-            data-caption="More than a game">
+          <button class="gallery-item" data-category="portraits"
+                  data-title="The Players"
+                  data-image="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85">
             <img
-              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=85"
-              alt="Football and the emotion of the game"
-              loading="lazy"
-            >
-            <span class="photo-overlay">
-              <strong>More than a game</strong>
-              <span>05 / Emotion</span>
+              src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80"
+              alt="Football players and pitch"
+              loading="lazy">
+            <span class="gallery-overlay">
+              <span class="gallery-category">Portraits</span>
+              <span class="gallery-title">The Players</span>
             </span>
           </button>
 
-          <button class="photo-card" type="button"
-            data-category="the-game"
-            data-image="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?auto=format&fit=crop&w=1800&q=90"
-            data-caption="The details">
+          <button class="gallery-item" data-category="details"
+                  data-title="Beyond The 90"
+                  data-image="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=85">
             <img
-              src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?auto=format&fit=crop&w=900&q=85"
-              alt="Football pitch and matchday details"
-              loading="lazy"
-            >
-            <span class="photo-overlay">
-              <strong>The details</strong>
-              <span>06 / The game</span>
+              src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80"
+              alt="Football stadium and pitch"
+              loading="lazy">
+            <span class="gallery-overlay">
+              <span class="gallery-category">Details</span>
+              <span class="gallery-title">Beyond The 90</span>
             </span>
           </button>
 
         </div>
 
-        <p class="gallery-note">
-          Demo images are currently shown here. Replace these with your own
-          football photographs before using the website as your portfolio.
-        </p>
-      </div>
-    </section>
-
-    <!-- STATEMENT -->
-    <section class="statement">
-      <div class="container">
-        <p>
-          Football is more than a game.
-          <span>It's emotion, identity and moments remembered for a lifetime.</span>
-        </p>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="container about-grid">
-        <div>
-          <p class="section-kicker">02 / Behind the lens</p>
-          <h2>More than just the final score.</h2>
-        </div>
+    <section class="about" id="about">
+      <div class="container about-layout">
 
         <div class="about-copy">
+          <p class="section-label">Behind The Lens</p>
+
+          <h2>More Than<br>A Game.</h2>
+
           <p>
-            What once started as a hobby has grown into the start of something
-            bigger. The VZN is my way of capturing football beyond the result —
-            the passion, the pressure and the people who make the game what it is.
+            I'm an aspiring sports photographer building a portfolio
+            focused on the energy, emotion and stories of football.
+            Every image is an opportunity to capture something worth
+            remembering.
           </p>
 
           <p>
-            From capturing <strong>late winners, cupsets and everything in
-            between</strong>, my aim is to tell the story of every match through
-            the moments that might otherwise be missed.
+            I've worked with clubs including <strong>Punjab United,
+            SE Dons, Hashtag United and Croydon</strong>, continually
+            developing my style and experience in football media.
           </p>
 
-          <p>
-            Whether it's the intensity of a match, the celebrations after the
-            whistle or the people working behind the scenes, there's always
-            another side to the game worth capturing.
-          </p>
-
-          <p>
-            This is football through my lens. This is <strong>The VZN.</strong>
-          </p>
-
-          <span class="about-label">Football photography · Beyond the 90</span>
+          <div class="about-tags">
+            <span>Football</span>
+            <span>Matchday</span>
+            <span>Sports Media</span>
+            <span>Visual Storytelling</span>
+          </div>
         </div>
+
+        <div class="about-statement">
+          Every match has a story.
+          <span>I'm here to capture it.</span>
+        </div>
+
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <div class="container contact-grid">
-        <div>
-          <p class="section-kicker">03 / Let's work together</p>
-          <h2>Have a game in mind?</h2>
+    <section class="contact" id="contact">
+      <div class="container">
 
-          <p class="contact-copy">
-            For matchday photography, club media, collaborations and other
-            enquiries, get in touch. Let's capture something worth remembering.
-          </p>
-        </div>
+        <p class="section-label">Let's Work Together</p>
 
-        <div class="contact-details">
-          <a href="mailto:bidvzn.work@gmail.com">
-            bidvzn.work@gmail.com ↗
+        <h2>Have A Game<br>In <span>Mind?</span></h2>
+
+        <p>
+          Looking for football photography for your club, players
+          or project? Get in touch and let's talk.
+        </p>
+
+        <div class="contact-links">
+          <a class="button button-primary"
+             href="mailto:bidvzn.work@gmail.com">
+            Email Me
           </a>
 
-          <a href="https://www.instagram.com/bidvzn/"
-            target="_blank" rel="noopener noreferrer">
-            Instagram — @bidvzn ↗
+          <a class="button button-outline"
+             href="https://www.instagram.com/bidvzn/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Instagram
           </a>
         </div>
+
       </div>
     </section>
 
@@ -891,48 +934,59 @@
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-      <a class="logo-image" href="#top" aria-label="The VZN home">
-        <img
-          src="images/bid.png"
-          alt="The VZN — Beyond the 90"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-        >
-        <span class="logo-fallback">THE VZN</span>
-      </a>
 
-      <p class="footer-copy">
-        © <span id="year"></span> The VZN · Beyond the 90
-      </p>
+      <div>
+        <a href="#home" class="logo-image" aria-label="Back to top">
+          <img src="images/bid.png" alt="The VZN logo">
+        </a>
 
-      <a class="back-to-top" href="#top">Back to top ↑</a>
+        <p class="footer-tagline">Beyond the 90.</p>
+      </div>
+
+      <div class="footer-right">
+        <a class="footer-social"
+           href="https://www.instagram.com/bidvzn/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Instagram · @bidvzn
+        </a>
+
+        <p>© <span id="year"></span> The VZN. All rights reserved.</p>
+      </div>
+
     </div>
   </footer>
 
   <!-- PHOTO LIGHTBOX -->
-  <div class="lightbox" id="lightbox" role="dialog"
-    aria-modal="true" aria-label="Photograph viewer">
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-content">
 
-    <button class="lightbox-close" id="lightbox-close"
-      type="button" aria-label="Close photograph">×</button>
+      <button class="lightbox-close" id="lightbox-close"
+              aria-label="Close image">
+        &times;
+      </button>
 
-    <img id="lightbox-image" src="" alt="">
-    <p class="lightbox-caption" id="lightbox-caption"></p>
+      <img id="lightbox-image" src="" alt="">
+
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+
+    </div>
   </div>
 
   <script>
-    // Automatic copyright year
+    // Automatically update the copyright year
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Gallery filters
+    // Portfolio category filters
     const filterButtons = document.querySelectorAll(".filter-button");
-    const photoCards = document.querySelectorAll(".photo-card");
+    const galleryItems = document.querySelectorAll(".gallery-item");
 
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
+    filterButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        const selectedFilter = button.dataset.filter;
 
-        filterButtons.forEach((item) => {
+        filterButtons.forEach(function(item) {
           item.classList.remove("active");
           item.setAttribute("aria-pressed", "false");
         });
@@ -940,56 +994,60 @@
         button.classList.add("active");
         button.setAttribute("aria-pressed", "true");
 
-        photoCards.forEach((card) => {
-          const matches =
-            filter === "all" || card.dataset.category === filter;
+        galleryItems.forEach(function(item) {
+          const category = item.dataset.category;
 
-          card.hidden = !matches;
+          if (selectedFilter === "all" || category === selectedFilter) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
         });
       });
     });
 
-    // Open a photograph in the lightbox
+    // Open and close the photo lightbox
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxCaption = document.getElementById("lightbox-caption");
     const closeButton = document.getElementById("lightbox-close");
 
-    let previouslyFocusedElement = null;
+    function openLightbox(item) {
+      const imageUrl = item.dataset.image;
+      const title = item.dataset.title || "";
+
+      lightboxImage.src = imageUrl;
+      lightboxImage.alt = title;
+      lightboxCaption.textContent = title;
+
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeButton.focus();
+    }
 
     function closeLightbox() {
       lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
       lightboxImage.src = "";
       document.body.style.overflow = "";
-
-      if (previouslyFocusedElement) {
-        previouslyFocusedElement.focus();
-      }
     }
 
-    photoCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        previouslyFocusedElement = card;
-
-        lightboxImage.src = card.dataset.image;
-        lightboxImage.alt = card.dataset.caption;
-        lightboxCaption.textContent = card.dataset.caption;
-
-        lightbox.classList.add("open");
-        document.body.style.overflow = "hidden";
-        closeButton.focus();
+    galleryItems.forEach(function(item) {
+      item.addEventListener("click", function() {
+        openLightbox(item);
       });
     });
 
     closeButton.addEventListener("click", closeLightbox);
 
-    lightbox.addEventListener("click", (event) => {
+    lightbox.addEventListener("click", function(event) {
       if (event.target === lightbox) {
         closeLightbox();
       }
     });
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", function(event) {
       if (event.key === "Escape" && lightbox.classList.contains("open")) {
         closeLightbox();
       }
