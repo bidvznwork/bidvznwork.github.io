@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090909">
-  <meta name="description" content="The VZN — football photography beyond the 90. Capturing the moments, emotion and stories of the game.">
-
+  <meta name="description" content="The VZN — football photography beyond the 90.">
   <title>The VZN | Football Photography</title>
 
   <style>
@@ -41,7 +40,10 @@
       text-decoration: none;
     }
 
-    button {
+    button,
+    input,
+    select,
+    textarea {
       font: inherit;
     }
 
@@ -133,8 +135,8 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      width: min(620px, 90%);
-      max-width: none;
+      width: 90%;
+      max-width: 620px;
       margin-left: max(5vw, calc((100vw - 1200px) / 2));
       padding: 105px 36px 100px 0;
       align-self: center;
@@ -151,8 +153,9 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, #090909 0%, rgba(9,9,9,0.28) 28%, rgba(9,9,9,0.02) 100%),
-                  linear-gradient(0deg, rgba(0,0,0,0.42), transparent 45%);
+      background:
+        linear-gradient(90deg, #090909 0%, rgba(9,9,9,0.28) 28%, rgba(9,9,9,0.02) 100%),
+        linear-gradient(0deg, rgba(0,0,0,0.42), transparent 45%);
     }
 
     .hero-visual::after {
@@ -181,7 +184,6 @@
       letter-spacing: -0.075em;
       font-weight: 900;
       text-transform: uppercase;
-      max-width: 900px;
     }
 
     .hero h1 span {
@@ -244,7 +246,7 @@
       color: var(--accent);
     }
 
-    /* CONTINUOUS SCROLLING TYPE */
+    /* TEXT SCROLL — MOBILE-SAFE */
 
     .marquee {
       overflow: hidden;
@@ -256,19 +258,26 @@
       width: 100%;
       position: relative;
       z-index: 3;
+      -webkit-transform: translateZ(0) rotate(-1.2deg) scale(1.015);
     }
 
     .marquee-track {
       display: flex;
+      flex-wrap: nowrap;
       width: max-content;
-      animation: marquee-scroll 32s linear infinite;
+      min-width: max-content;
+      animation: marquee-scroll 22s linear infinite;
+      -webkit-animation: marquee-scroll 22s linear infinite;
+      animation-play-state: running;
+      -webkit-animation-play-state: running;
       will-change: transform;
+      transform: translateZ(0);
     }
 
     .marquee-group {
       display: flex;
       align-items: center;
-      flex-shrink: 0;
+      flex: 0 0 auto;
       gap: 28px;
       padding-right: 28px;
       white-space: nowrap;
@@ -284,13 +293,24 @@
       font-size: 0.8em;
     }
 
-    .marquee:hover .marquee-track {
-      animation-play-state: paused;
+    @keyframes marquee-scroll {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
     }
 
-    @keyframes marquee-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+    @-webkit-keyframes marquee-scroll {
+      from {
+        -webkit-transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        -webkit-transform: translate3d(-50%, 0, 0);
+      }
     }
 
     /* GENERAL SECTIONS */
@@ -301,12 +321,6 @@
 
     #portfolio {
       padding-top: 88px;
-    }
-
-    .section-heading h2,
-    .about h2,
-    .contact h2 {
-      font-weight: 900;
     }
 
     .section-heading {
@@ -329,6 +343,7 @@
     .section-heading h2,
     .about h2,
     .contact h2 {
+      font-weight: 900;
       font-size: clamp(34px, 5vw, 58px);
       line-height: 1.05;
       letter-spacing: -2px;
@@ -355,32 +370,43 @@
       color: white;
     }
 
-    /* AUTOMATICALLY SCROLLING PHOTO STRIP */
+    /* PHOTO SCROLL — MOBILE-SAFE */
 
     .photo-marquee {
       width: 100%;
       overflow: hidden;
       padding: 8px 0 22px;
       background: var(--background);
+      position: relative;
+      -webkit-transform: translateZ(0);
     }
 
     .photo-marquee-track {
       display: flex;
+      flex-wrap: nowrap;
       width: max-content;
+      min-width: max-content;
       gap: 14px;
-      animation: photo-scroll 55s linear infinite;
+      animation: photo-scroll 35s linear infinite;
+      -webkit-animation: photo-scroll 35s linear infinite;
+      animation-play-state: running;
+      -webkit-animation-play-state: running;
       will-change: transform;
+      transform: translateZ(0);
     }
 
     .photo-marquee-group {
       display: flex;
+      flex: 0 0 auto;
       flex-shrink: 0;
+      flex-wrap: nowrap;
       gap: 14px;
       padding-right: 0;
     }
 
     .photo-marquee img {
       display: block;
+      flex: 0 0 auto;
       width: clamp(190px, 24vw, 330px);
       height: clamp(145px, 20vw, 250px);
       object-fit: cover;
@@ -390,16 +416,26 @@
 
     .photo-marquee img:hover {
       filter: saturate(1.1);
-      transform: scale(0.98);
-    }
-
-    .photo-marquee:hover .photo-marquee-track {
-      animation-play-state: paused;
     }
 
     @keyframes photo-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    @-webkit-keyframes photo-scroll {
+      from {
+        -webkit-transform: translate3d(0, 0, 0);
+      }
+
+      to {
+        -webkit-transform: translate3d(-50%, 0, 0);
+      }
     }
 
     /* PHOTO GALLERY */
@@ -558,39 +594,6 @@
       letter-spacing: 1px;
     }
 
-    /* CONTACT */
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact .section-label {
-      margin-bottom: 18px;
-    }
-
-    .contact h2 {
-      max-width: 750px;
-      margin: 0 auto;
-    }
-
-    .contact h2 span {
-      color: var(--accent);
-    }
-
-    .contact p {
-      color: var(--muted);
-      max-width: 500px;
-      margin: 22px auto 30px;
-      font-size: 14px;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-    }
-
     /* CLUBS & ORGANISATIONS */
 
     .clubs {
@@ -639,7 +642,40 @@
       text-transform: uppercase;
     }
 
-    /* BOOKING / ENQUIRY FORM */
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .section-label {
+      margin-bottom: 18px;
+    }
+
+    .contact h2 {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .contact h2 span {
+      color: var(--accent);
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 500px;
+      margin: 22px auto 30px;
+      font-size: 14px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    /* BOOKING FORM */
 
     .booking-form {
       max-width: 850px;
@@ -676,7 +712,9 @@
       min-width: 0;
     }
 
-    .form-field.full-width { grid-column: 1 / -1; }
+    .form-field.full-width {
+      grid-column: 1 / -1;
+    }
 
     .form-field label {
       color: #eee;
@@ -696,7 +734,6 @@
       background: #090909;
       border: 1px solid rgba(255,255,255,.18);
       border-radius: 0;
-      font: inherit;
       font-size: 14px;
       outline: none;
     }
@@ -712,7 +749,10 @@
       border-color: var(--accent);
     }
 
-    .form-field select option { background: #111; color: #fff; }
+    .form-field select option {
+      background: #111;
+      color: #fff;
+    }
 
     .form-submit-row {
       display: flex;
@@ -775,7 +815,7 @@
       color: var(--accent);
     }
 
-    /* MOBILE */
+    /* TABLET */
 
     @media (max-width: 800px) {
       .nav {
@@ -816,20 +856,26 @@
         background-position: 58% center;
       }
 
-      .marquee {
-        padding: 14px 0 12px;
-      }
-
+      /* Scrolling text remains active on touchscreens */
       .marquee-track {
-        animation-duration: 26s;
+        animation: marquee-scroll 22s linear infinite !important;
+        -webkit-animation: marquee-scroll 22s linear infinite !important;
+        animation-play-state: running !important;
+        -webkit-animation-play-state: running !important;
       }
 
+      /* Scrolling photos remain active on touchscreens */
       .photo-marquee-track {
-        animation-duration: 42s;
+        animation: photo-scroll 35s linear infinite !important;
+        -webkit-animation: photo-scroll 35s linear infinite !important;
+        animation-play-state: running !important;
+        -webkit-animation-play-state: running !important;
       }
 
-      .hero h1 {
-        letter-spacing: -3px;
+      .marquee:hover .marquee-track,
+      .photo-marquee:hover .photo-marquee-track {
+        animation-play-state: running !important;
+        -webkit-animation-play-state: running !important;
       }
 
       section {
@@ -849,11 +895,9 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
       }
-
-      .gallery-item {
-        aspect-ratio: 4 / 3;
-      }
     }
+
+    /* MOBILE */
 
     @media (max-width: 500px) {
       .container {
@@ -912,13 +956,29 @@
         background: linear-gradient(0deg, rgba(9,9,9,0.1), transparent 50%);
       }
 
-      .marquee-group {
-        font-size: 20px;
-        gap: 18px;
+      .marquee {
+        padding: 14px 0 12px;
+      }
+
+      .marquee-track {
+        animation-duration: 22s !important;
+        -webkit-animation-duration: 22s !important;
       }
 
       .marquee-group {
+        font-size: 20px;
+        gap: 18px;
         padding-right: 18px;
+      }
+
+      .photo-marquee {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .photo-marquee-track {
+        animation-duration: 30s !important;
+        -webkit-animation-duration: 30s !important;
       }
 
       .photo-marquee-track,
@@ -978,22 +1038,12 @@
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-      }
-
-      .marquee-track,
-      .photo-marquee-track {
-        animation: none;
-      }
-    }
+    /*
+      IMPORTANT:
+      Do not disable the marquee animations inside a reduced-motion
+      media query. That can make the text and photo strip look frozen.
+      The scrolling animations intentionally remain enabled.
+    */
   </style>
 </head>
 
@@ -1002,7 +1052,6 @@
   <!-- NAVIGATION -->
   <header>
     <div class="container nav">
-
       <a href="#home" class="logo-image" aria-label="The VZN home">
         <img src="images/bid.png" alt="The VZN logo">
       </a>
@@ -1016,45 +1065,34 @@
           <li><a href="#contact" class="nav-contact">Contact</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
   <main>
 
-    <!-- HOMEPAGE -->
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-content">
-
         <p class="eyebrow">Football Photography · Beyond the 90</p>
 
-        <h1>
-          Capturing<br>
-          The <span>Game.</span>
-        </h1>
+        <h1>Capturing<br>The <span>Game.</span></h1>
 
         <p class="hero-description">
           The moments, emotion and stories that make football more than
-          just a game. Football photography from my VZN.
+          just a game. Football photography by The VZN.
         </p>
 
         <div class="hero-actions">
-          <a href="#portfolio" class="button button-primary">
-            View Portfolio
-          </a>
-
-          <a href="#contact" class="button button-outline">
-            Work With Me
-          </a>
+          <a href="#portfolio" class="button button-primary">View Portfolio</a>
+          <a href="#contact" class="button button-outline">Work With Me</a>
         </div>
-
       </div>
 
       <div class="hero-visual" role="img" aria-label="Football photography hero image"></div>
     </section>
 
-    <!-- SCROLLING BRAND STRIP -->
-    <div class="marquee" aria-label="Football Photography · Beyond the 90" role="region">
+    <!-- CONTINUOUS TEXT SCROLL -->
+    <div class="marquee" aria-label="Football Photography · Beyond the 90">
       <div class="marquee-track" aria-hidden="true">
         <div class="marquee-group">
           <span>Football Photography</span><span class="marquee-star">✳</span>
@@ -1072,11 +1110,11 @@
       </div>
     </div>
 
-    <!-- AUTOMATICALLY SCROLLING PORTFOLIO PHOTOS -->
+    <!-- CONTINUOUS PHOTO SCROLL -->
     <div class="photo-marquee" aria-label="Scrolling selection of football photography">
       <div class="photo-marquee-track">
 
-        <div class="photo-marquee-group" aria-hidden="false">
+        <div class="photo-marquee-group">
           <img src="images/IMG_3163.jpg" alt="Football photography selection 1" loading="lazy">
           <img src="images/IMG_3682 2 (1).jpg" alt="Football photography selection 2" loading="lazy">
           <img src="images/IMG_6641 2 (1).jpg" alt="Football photography selection 3" loading="lazy">
@@ -1112,7 +1150,6 @@
     <!-- PORTFOLIO -->
     <section id="portfolio">
       <div class="container">
-
         <div class="section-heading">
           <div>
             <p class="section-label">Selected Work</p>
@@ -1127,8 +1164,8 @@
 
         <div class="gallery-grid" id="gallery-grid"></div>
 
-        <div style="text-align: center; margin-top: 45px;">
-          <p style="color: var(--muted); margin-bottom: 18px;">
+        <div style="text-align:center; margin-top:45px;">
+          <p style="color:var(--muted); margin-bottom:18px;">
             Want to see more of my photography?
           </p>
 
@@ -1139,31 +1176,28 @@
             Explore Full Portfolio ↗
           </a>
         </div>
-
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container about-layout">
-
         <div class="about-copy">
           <p class="section-label">Behind The Lens</p>
-
           <h2>More Than<br>A Game.</h2>
 
           <p>
-            I'm Brady, better known as BIDVZN.
-            Since leaving my academic years behind me, photography has become my life.
-            What was once a hobby is now the start of a career I'm determined to build.
-            From capturing late winners, cupsets and everything inbetween,
-            <strong>I aim to tell the story of the match through my lens.</strong>
+            I'm Brady, better known as BIDVZN. Photography has become
+            the start of a career I'm determined to build. From capturing
+            late winners, cupsets and everything in between, I aim to tell
+            the story of the match through my lens.
           </p>
 
           <p>
             I've worked with clubs including <strong>Punjab United,
-            SE Dons, Hashtag United, Croydon Athletic and Inspire Sports Academy</strong>.
-            Through these opportunities I've developed my style and experience in football media.
+            SE Dons, Hashtag United, Croydon Athletic and Inspire Sports
+            Academy.</strong> Through these opportunities I've developed
+            my style and experience in football media.
           </p>
 
           <div class="about-tags">
@@ -1187,14 +1221,12 @@
             <span>I'm here to capture it.</span>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- CLUBS & ORGANISATIONS -->
     <section class="clubs" id="clubs">
       <div class="container">
-
         <div class="section-heading">
           <div>
             <p class="section-label">Experience</p>
@@ -1202,12 +1234,12 @@
           </div>
 
           <p class="section-intro">
-            A selection of the clubs and organisations I've had the opportunity to work with through football photography.
+            A selection of the clubs and organisations I've had the
+            opportunity to work with through football photography.
           </p>
         </div>
 
         <div class="clubs-grid">
-
           <div class="club-card">
             <img src="images/punjab.png" alt="Punjab United badge" loading="lazy">
             <span>Punjab United</span>
@@ -1232,29 +1264,24 @@
             <img src="images/inspire.png" alt="Inspire Sports Academy badge" loading="lazy">
             <span>Inspire Sports Academy</span>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT AND BOOKING -->
     <section class="contact" id="contact">
       <div class="container">
-
         <p class="section-label">Let's Work Together</p>
 
         <h2>Have A Game<br>In <span>Mind?</span></h2>
 
         <p>
-          Football is so much more than a game.
-          It's emotion, identity and moments that'll be remembered for a lifetime.
-          <strong>It's my job to make sure those moments never fade.</strong>
-          Every match has a different story. Let me capture yours.
-          Contact now via <strong>Email or DM</strong> for more information.
+          Football is so much more than a game. It's emotion, identity
+          and moments that'll be remembered for a lifetime. Every match
+          has a different story. Let me capture yours.
         </p>
 
         <div class="contact-links">
-
           <a class="button button-outline"
              href="https://www.instagram.com/bidvzn/"
              target="_blank"
@@ -1262,8 +1289,7 @@
             Instagram ↗
           </a>
 
-          <a class="button button-primary"
-             href="mailto:bidvzn.work@gmail.com">
+          <a class="button button-primary" href="mailto:bidvzn.work@gmail.com">
             Email Me
           </a>
 
@@ -1273,18 +1299,17 @@
              rel="noopener noreferrer">
             Full Portfolio ↗
           </a>
-
         </div>
 
         <form class="booking-form" id="booking-form">
           <h3>Book a Shoot / Make an Enquiry</h3>
 
           <p class="form-intro">
-            Tell me a little about your fixture or project and I'll get back to you as soon as possible.
+            Tell me a little about your fixture or project and I'll get
+            back to you as soon as possible.
           </p>
 
           <div class="form-grid">
-
             <div class="form-field">
               <label for="booking-name">Your name *</label>
               <input id="booking-name" name="name" type="text" autocomplete="name" required>
@@ -1326,19 +1351,17 @@
               <label for="booking-details">Tell me more *</label>
               <textarea id="booking-details" name="details" placeholder="Fixture details, timings, what coverage you're looking for, etc." required></textarea>
             </div>
-
           </div>
 
           <div class="form-submit-row">
             <button type="submit" class="button button-primary">Send Enquiry ↗</button>
 
             <p class="form-note">
-              Submitting opens your email app with the enquiry filled in, ready for you to send.
-              Your details aren't stored on this website.
+              Submitting opens your email app with the enquiry filled in,
+              ready for you to send. Your details aren't stored on this website.
             </p>
           </div>
         </form>
-
       </div>
     </section>
 
@@ -1347,12 +1370,10 @@
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-
       <div>
         <a href="#home" class="logo-image" aria-label="The VZN home">
           <img src="images/bid.png" alt="The VZN logo">
         </a>
-
         <p class="footer-tagline">Beyond the 90.</p>
       </div>
 
@@ -1375,38 +1396,56 @@
 
         <p>© <span id="year"></span> The VZN. All rights reserved.</p>
       </div>
-
     </div>
   </footer>
 
   <!-- PHOTO LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-content">
-
       <button class="lightbox-close" id="lightbox-close" aria-label="Close image">
         &times;
       </button>
 
       <img id="lightbox-image" src="" alt="">
-
       <p class="lightbox-caption" id="lightbox-caption"></p>
-
     </div>
   </div>
 
   <script>
-    // Automatically update the copyright year
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    // Copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Your actual portfolio images. Keep these filenames inside the images folder.
+    // Portfolio photos
     const portfolioPhotos = [
-      "IMG_3163.jpg", "IMG_3682 2 (1).jpg", "IMG_6641 2 (1).jpg", "IMG_1138.jpg",
-      "IMG_1151.jpg", "IMG_1257.jpg", "IMG_1306.jpg", "IMG_2771.jpg", "IMG_3609.jpg",
-      "IMG_3649.jpg", "IMG_3652.jpg", "IMG_3734.jpg", "IMG_3738.jpg", "IMG_3774.jpg",
-      "IMG_3775.jpg", "IMG_6942.jpg", "IMG_6951.jpg", "IMG_6955.jpg", "IMG_9374.jpg",
-      "IMG_9410.jpg", "IMG_9415.jpg", "IMG_4984.jpg", "IMG_5144.jpg", "IMG_5187.jpg",
-      "IMG_5446.jpg", "IMG_5475.jpg", "IMG_5519.jpg", "IMG_8200.jpg", "IMG_8299.jpg",
+      "IMG_3163.jpg",
+      "IMG_3682 2 (1).jpg",
+      "IMG_6641 2 (1).jpg",
+      "IMG_1138.jpg",
+      "IMG_1151.jpg",
+      "IMG_1257.jpg",
+      "IMG_1306.jpg",
+      "IMG_2771.jpg",
+      "IMG_3609.jpg",
+      "IMG_3649.jpg",
+      "IMG_3652.jpg",
+      "IMG_3734.jpg",
+      "IMG_3738.jpg",
+      "IMG_3774.jpg",
+      "IMG_3775.jpg",
+      "IMG_6942.jpg",
+      "IMG_6951.jpg",
+      "IMG_6955.jpg",
+      "IMG_9374.jpg",
+      "IMG_9410.jpg",
+      "IMG_9415.jpg",
+      "IMG_4984.jpg",
+      "IMG_5144.jpg",
+      "IMG_5187.jpg",
+      "IMG_5446.jpg",
+      "IMG_5475.jpg",
+      "IMG_5519.jpg",
+      "IMG_8200.jpg",
+      "IMG_8299.jpg",
       "IMG_8301.jpg"
     ];
 
@@ -1422,15 +1461,14 @@
       item.dataset.title = "Photography " + number;
       item.dataset.image = path;
       item.setAttribute("aria-label", "Open football photograph " + number);
-      item.innerHTML = '<img src="' + path + '" alt="Football photograph ' + number + '" loading="lazy">';
+      item.innerHTML =
+        '<img src="' + path + '" alt="Football photograph ' +
+        number + '" loading="lazy">';
 
       galleryGrid.appendChild(item);
     });
 
-    // All portfolio photos remain visible; clicking any photo opens the lightbox.
-    const galleryItems = document.querySelectorAll(".gallery-item");
-
-    // Open and close the photo lightbox
+    // Lightbox controls
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxCaption = document.getElementById("lightbox-caption");
@@ -1454,7 +1492,7 @@
       document.body.style.overflow = "";
     }
 
-    galleryItems.forEach(function(item) {
+    document.querySelectorAll(".gallery-item").forEach(function(item) {
       item.addEventListener("click", function() {
         openLightbox(item);
       });
@@ -1474,26 +1512,31 @@
       }
     });
 
-    // Booking form: creates an email draft; it does not send or store anything automatically.
+    // Booking form opens an email draft for the visitor to send.
     const bookingForm = document.getElementById("booking-form");
 
     bookingForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
       const formData = new FormData(bookingForm);
-      const value = (key) => (formData.get(key) || "Not provided").toString().trim();
+      const value = function(key) {
+        return (formData.get(key) || "Not provided").toString().trim();
+      };
 
       const subject = "Photography Enquiry - " + value("shoot_type");
 
       const body = [
-        "New photography enquiry via The VZN website", "",
+        "New photography enquiry via The VZN website",
+        "",
         "Name: " + value("name"),
         "Email: " + value("email"),
         "Club / organisation: " + value("club"),
         "Type of shoot: " + value("shoot_type"),
         "Preferred date: " + value("date"),
-        "Venue / location: " + value("location"), "",
-        "Details:", value("details")
+        "Venue / location: " + value("location"),
+        "",
+        "Details:",
+        value("details")
       ].join("\n");
 
       window.location.href =
