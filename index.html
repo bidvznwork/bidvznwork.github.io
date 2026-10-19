@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090909">
   <meta name="description" content="The VZN — football photography beyond the 90. Capturing the moments, emotion and stories of the game.">
-
   <title>The VZN | Football Photography</title>
 
   <style>
@@ -16,19 +14,12 @@
       --text: #ffffff;
       --muted: #a0a0a0;
       --accent: #0049B7;
-      --border: rgba(255, 255, 255, 0.12);
+      --border: rgba(255,255,255,0.12);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
     body {
       background: var(--background);
@@ -37,24 +28,11 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
 
-    button {
-      font: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1200px, 90%);
-      margin: 0 auto;
-    }
+    .container { width: min(1200px, 90%); margin: 0 auto; }
 
     /* NAVIGATION */
 
@@ -62,7 +40,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9, 9, 9, 0.96);
+      background: rgba(9,9,9,0.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
@@ -75,11 +53,7 @@
       gap: 25px;
     }
 
-    .logo-image {
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
+    .logo-image { display: inline-flex; align-items: center; flex-shrink: 0; }
 
     .logo-image img {
       width: 200px;
@@ -97,52 +71,38 @@
 
     .nav-links a {
       font-size: 13px;
-      color: #dddddd;
-      transition: color 0.2s ease;
+      color: #ddd;
+      transition: color .2s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: #4D8DFF; }
 
     .nav-contact {
       border: 1px solid var(--accent);
       padding: 10px 17px;
-      color: #ffffff !important;
+      color: #fff !important;
       background: var(--accent);
     }
 
     .nav-contact:hover {
-      background: #ffffff;
-      border-color: #ffffff;
+      background: #fff;
+      border-color: #fff;
       color: #090909 !important;
     }
 
     /* HERO */
 
     .hero {
-      min-height: 690px;
       min-height: min(780px, calc(100svh - 100px));
       display: flex;
       align-items: flex-end;
       position: relative;
       overflow: hidden;
-
       background-color: #171717;
       background-image:
-        linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.84) 0%,
-          rgba(0, 0, 0, 0.48) 55%,
-          rgba(0, 0, 0, 0.15) 100%
-        ),
-        linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.75) 0%,
-          transparent 70%
-        ),
+        linear-gradient(90deg, rgba(0,0,0,.84), rgba(0,0,0,.48) 55%, rgba(0,0,0,.15)),
+        linear-gradient(0deg, rgba(0,0,0,.75), transparent 70%),
         url("images/hero.jpg.png");
-
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -156,7 +116,7 @@
       padding: 100px 0 95px;
     }
 
-    .eyebrow {
+    .eyebrow, .section-label {
       color: #4D8DFF;
       font-size: 12px;
       font-weight: 700;
@@ -167,15 +127,13 @@
 
     .hero h1 {
       font-size: clamp(48px, 8vw, 100px);
-      line-height: 0.98;
+      line-height: .98;
       letter-spacing: -5px;
       text-transform: uppercase;
       max-width: 900px;
     }
 
-    .hero h1 span {
-      color: #4D8DFF;
-    }
+    .hero h1 span, .contact h2 span { color: #4D8DFF; }
 
     .hero-description {
       color: #dedede;
@@ -202,37 +160,28 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: 0.2s ease;
+      transition: .2s ease;
       cursor: pointer;
     }
 
     .button-primary {
       background: var(--accent);
-      color: #ffffff;
+      color: #fff;
       border: 1px solid var(--accent);
     }
 
     .button-primary:hover {
-      background: #ffffff;
-      border-color: #ffffff;
+      background: #fff;
+      border-color: #fff;
       color: #090909;
     }
 
-    .button-outline {
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      color: white;
-    }
-
-    .button-outline:hover {
-      border-color: #4D8DFF;
-      color: #4D8DFF;
-    }
+    .button-outline { border: 1px solid rgba(255,255,255,.6); color: white; }
+    .button-outline:hover { border-color: #4D8DFF; color: #4D8DFF; }
 
     /* GENERAL SECTIONS */
 
-    section {
-      padding: 100px 0;
-    }
+    section { padding: 100px 0; }
 
     .section-heading {
       display: flex;
@@ -242,29 +191,16 @@
       margin-bottom: 35px;
     }
 
-    .section-label {
-      color: #4D8DFF;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
+    .section-label { font-size: 11px; margin-bottom: 10px; }
 
-    .section-heading h2,
-    .about h2,
-    .contact h2 {
+    .section-heading h2, .about h2, .contact h2 {
       font-size: clamp(34px, 5vw, 58px);
       line-height: 1.05;
       letter-spacing: -2px;
       text-transform: uppercase;
     }
 
-    .section-intro {
-      color: var(--muted);
-      max-width: 420px;
-      font-size: 14px;
-    }
+    .section-intro { color: var(--muted); max-width: 420px; font-size: 14px; }
 
     .text-link {
       display: inline-block;
@@ -276,18 +212,146 @@
       letter-spacing: 1px;
     }
 
-    .text-link:hover {
+    .text-link:hover { color: white; }
+
+    /* FEATURED CAROUSEL */
+
+    .featured-section {
+      padding: 80px 0 30px;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      background: #111;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .carousel-stage {
+      position: relative;
+      height: clamp(320px, 58vw, 680px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #080808;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .45s ease, visibility .45s ease;
+      cursor: pointer;
+      background: #080808;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .carousel-slide::after {
+      content: "";
+      position: absolute;
+      inset: 50% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.5));
+      pointer-events: none;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      z-index: 2;
+      left: 28px;
+      bottom: 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: white;
+      pointer-events: none;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.6);
+      background: rgba(0,0,0,.55);
+      color: white;
+      font-size: 27px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .carousel-arrow:hover { background: var(--accent); border-color: var(--accent); }
+    .carousel-arrow.prev { left: 18px; }
+    .carousel-arrow.next { right: 18px; }
+
+    .carousel-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 20px;
+      background: #111;
+    }
+
+    .carousel-count {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #555;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .carousel-dot.active {
+      background: #4D8DFF;
+      transform: scale(1.3);
+    }
+
+    .carousel-dot:focus-visible, .carousel-arrow:focus-visible {
+      outline: 2px solid #4D8DFF;
+      outline-offset: 4px;
     }
 
     /* PORTFOLIO FILTERS */
 
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
 
     .filter-button {
       background: transparent;
@@ -298,13 +362,12 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: 0.2s ease;
+      transition: .2s ease;
     }
 
-    .filter-button:hover,
-    .filter-button.active {
+    .filter-button:hover, .filter-button.active {
       background: var(--accent);
-      color: #ffffff;
+      color: #fff;
       border-color: var(--accent);
     }
 
@@ -329,21 +392,16 @@
       width: 100%;
     }
 
-    .gallery-item.hidden {
-      display: none;
-    }
+    .gallery-item.hidden { display: none; }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease, opacity 0.3s ease;
+      transition: transform .5s ease, opacity .3s ease;
     }
 
-    .gallery-item:hover img {
-      transform: scale(1.045);
-      opacity: 0.75;
-    }
+    .gallery-item:hover img { transform: scale(1.045); opacity: .75; }
 
     .gallery-overlay {
       position: absolute;
@@ -352,11 +410,8 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 22px;
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8),
-        transparent 65%
-      );
+      background: linear-gradient(0deg, rgba(0,0,0,.8), transparent 65%);
+      pointer-events: none;
     }
 
     .gallery-category {
@@ -367,11 +422,7 @@
       margin-bottom: 5px;
     }
 
-    .gallery-title {
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
+    .gallery-title { font-size: 20px; font-weight: 700; text-transform: uppercase; }
 
     /* LIGHTBOX */
 
@@ -379,16 +430,14 @@
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, 0.96);
+      background: rgba(0,0,0,.96);
       display: none;
       align-items: center;
       justify-content: center;
       padding: 25px;
     }
 
-    .lightbox.open {
-      display: flex;
-    }
+    .lightbox.open { display: flex; }
 
     .lightbox-content {
       position: relative;
@@ -447,9 +496,7 @@
       max-width: 550px;
     }
 
-    .about-copy strong {
-      color: white;
-    }
+    .about-copy strong { color: white; }
 
     .about-statement {
       border-left: 3px solid var(--accent);
@@ -460,16 +507,9 @@
       text-transform: uppercase;
     }
 
-    .about-statement span {
-      color: #4D8DFF;
-    }
+    .about-statement span { color: #4D8DFF; }
 
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 25px;
-    }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
 
     .about-tags span {
       border: 1px solid var(--border);
@@ -482,22 +522,10 @@
 
     /* CONTACT */
 
-    .contact {
-      text-align: center;
-    }
+    .contact { text-align: center; }
+    .contact .section-label { margin-bottom: 18px; }
 
-    .contact .section-label {
-      margin-bottom: 18px;
-    }
-
-    .contact h2 {
-      max-width: 750px;
-      margin: 0 auto;
-    }
-
-    .contact h2 span {
-      color: #4D8DFF;
-    }
+    .contact h2 { max-width: 750px; margin: 0 auto; }
 
     .contact p {
       color: var(--muted);
@@ -515,10 +543,7 @@
 
     /* FOOTER */
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 0;
-    }
+    footer { border-top: 1px solid var(--border); padding: 30px 0; }
 
     .footer-inner {
       display: flex;
@@ -535,177 +560,76 @@
       object-position: left center;
     }
 
-    .footer-tagline {
-      color: var(--muted);
-      font-size: 11px;
-      margin-top: 4px;
-    }
-
-    .footer-right {
-      color: var(--muted);
-      font-size: 11px;
-      text-align: right;
-    }
-
-    .footer-social {
-      color: white;
-      display: inline-block;
-      margin-bottom: 5px;
-    }
-
-    .footer-social:hover {
-      color: #4D8DFF;
-    }
+    .footer-tagline { color: var(--muted); font-size: 11px; margin-top: 4px; }
+    .footer-right { color: var(--muted); font-size: 11px; text-align: right; }
+    .footer-social { color: white; display: inline-block; margin-bottom: 5px; }
+    .footer-social:hover { color: #4D8DFF; }
 
     /* MOBILE */
 
     @media (max-width: 800px) {
-      .nav {
-        min-height: 82px;
-        gap: 12px;
-      }
-
-      .logo-image img {
-        width: 145px;
-        max-height: 60px;
-      }
-
-      .nav-links {
-        gap: 15px;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      .nav-contact {
-        padding: 7px 10px;
-      }
+      .nav { min-height: 82px; gap: 12px; }
+      .logo-image img { width: 145px; max-height: 60px; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 11px; }
+      .nav-contact { padding: 7px 10px; }
 
       .hero {
-        min-height: 620px;
         min-height: min(720px, calc(100svh - 82px));
         background-position: 58% center;
       }
 
-      .hero-content {
-        padding: 80px 0 65px;
-      }
-
-      .hero h1 {
-        letter-spacing: -3px;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .about-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .gallery-title {
-        font-size: 16px;
-      }
-
-      .gallery-overlay {
-        padding: 14px;
-      }
+      .hero-content { padding: 80px 0 65px; }
+      .hero h1 { letter-spacing: -3px; }
+      section { padding: 75px 0; }
+      .featured-section { padding: 60px 0 20px; }
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .gallery-title { font-size: 16px; }
+      .gallery-overlay { padding: 14px; }
+      .carousel-caption { left: 18px; bottom: 16px; }
+      .carousel-arrow { width: 40px; height: 40px; }
+      .carousel-arrow.prev { left: 10px; }
+      .carousel-arrow.next { right: 10px; }
     }
 
     @media (max-width: 500px) {
-      .container {
-        width: 92%;
-      }
-
-      .nav {
-        min-height: 76px;
-      }
-
-      .logo-image img {
-        width: 115px;
-        max-height: 52px;
-      }
-
-      .nav-links {
-        gap: 10px;
-      }
-
-      .nav-links a {
-        font-size: 10px;
-      }
-
-      .nav-links li:nth-child(2) {
-        display: none;
-      }
-
-      .nav-contact {
-        padding: 7px 9px;
-      }
+      .container { width: 92%; }
+      .nav { min-height: 76px; }
+      .logo-image img { width: 115px; max-height: 52px; }
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 10px; }
+      .nav-links li:nth-child(2) { display: none; }
+      .nav-contact { padding: 7px 9px; }
 
       .hero {
-        min-height: 610px;
         min-height: min(700px, calc(100svh - 76px));
       }
 
-      .hero h1 {
-        font-size: clamp(46px, 12vw, 65px);
-        letter-spacing: -2.5px;
-      }
-
-      .hero-content {
-        padding-bottom: 55px;
-      }
-
-      .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item {
-        aspect-ratio: 4 / 4.5;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .footer-right {
-        text-align: left;
-      }
+      .hero h1 { font-size: clamp(46px, 12vw, 65px); letter-spacing: -2.5px; }
+      .hero-content { padding-bottom: 55px; }
+      .section-heading { align-items: flex-start; flex-direction: column; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item { aspect-ratio: 4 / 4.5; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-right { text-align: left; }
+      .carousel-stage { height: 430px; }
+      .carousel-footer { padding: 14px 12px; }
+      .carousel-dots { gap: 7px; }
+      .carousel-caption { font-size: 10px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
     }
   </style>
 </head>
 
 <body>
-
   <!-- NAVIGATION -->
   <header>
     <div class="container nav">
-
       <a href="#home" class="logo-image" aria-label="The VZN home">
         <img src="images/bid.png" alt="The VZN logo">
       </a>
@@ -718,51 +642,137 @@
           <li><a href="#contact" class="nav-contact">Contact</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
   <main>
-
     <!-- HOMEPAGE -->
     <section class="hero" id="home">
       <div class="hero-content">
-
         <p class="eyebrow">Football Photography · Beyond the 90</p>
-
-        <h1>
-          Capturing<br>
-          The <span>Game.</span>
-        </h1>
-
+        <h1>Capturing<br>The <span>Game.</span></h1>
         <p class="hero-description">
           The moments, emotion and stories that make football more than
           just a game. Football photography by The VZN.
         </p>
 
         <div class="hero-actions">
-          <a href="#portfolio" class="button button-primary">
-            View Portfolio
-          </a>
-
-          <a href="#contact" class="button button-outline">
-            Work With Me
-          </a>
+          <a href="#portfolio" class="button button-primary">View Portfolio</a>
+          <a href="#contact" class="button button-outline">Work With Me</a>
         </div>
-
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- FEATURED CAROUSEL -->
+    <section class="featured-section" aria-label="Featured photography">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Featured Photography</p>
+            <h2>Through My Lens.</h2>
+          </div>
+          <p class="section-intro">
+            A selection of moments captured beyond the 90.
+            Use the arrows to explore the featured photographs.
+          </p>
+        </div>
+
+        <div class="carousel" id="featured-carousel">
+          <div class="carousel-stage" id="carousel-stage">
+            <button class="carousel-slide active" type="button"
+                    data-image="images/IMG_5519.jpg"
+                    data-title="Featured Photograph 01"
+                    aria-label="Open featured photograph 1">
+              <img src="images/IMG_5519.jpg" alt="Football photography, featured image 1" fetchpriority="high">
+              <span class="carousel-caption">Featured Photography · 01 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_1306.jpg"
+                    data-title="Featured Photograph 02"
+                    aria-label="Open featured photograph 2">
+              <img src="images/IMG_1306.jpg" alt="Football photography, featured image 2" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 02 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_6955.jpg"
+                    data-title="Featured Photograph 03"
+                    aria-label="Open featured photograph 3">
+              <img src="images/IMG_6955.jpg" alt="Football photography, featured image 3" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 03 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_3734.jpg"
+                    data-title="Featured Photograph 04"
+                    aria-label="Open featured photograph 4">
+              <img src="images/IMG_3734.jpg" alt="Football photography, featured image 4" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 04 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_8299.jpg"
+                    data-title="Featured Photograph 05"
+                    aria-label="Open featured photograph 5">
+              <img src="images/IMG_8299.jpg" alt="Football photography, featured image 5" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 05 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_0625.jpg"
+                    data-title="Featured Photograph 06"
+                    aria-label="Open featured photograph 6">
+              <img src="images/IMG_0625.jpg" alt="Football photography, featured image 6" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 06 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_5144.jpg"
+                    data-title="Featured Photograph 07"
+                    aria-label="Open featured photograph 7">
+              <img src="images/IMG_5144.jpg" alt="Football photography, featured image 7" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 07 / 08</span>
+            </button>
+
+            <button class="carousel-slide" type="button"
+                    data-image="images/IMG_9415.jpg"
+                    data-title="Featured Photograph 08"
+                    aria-label="Open featured photograph 8">
+              <img src="images/IMG_9415.jpg" alt="Football photography, featured image 8" loading="lazy">
+              <span class="carousel-caption">Featured Photography · 08 / 08</span>
+            </button>
+
+            <button class="carousel-arrow prev" id="carousel-prev" type="button" aria-label="Previous photograph">&#8249;</button>
+            <button class="carousel-arrow next" id="carousel-next" type="button" aria-label="Next photograph">&#8250;</button>
+          </div>
+
+          <div class="carousel-footer">
+            <span class="carousel-count" id="carousel-count" aria-live="polite">01 / 08</span>
+            <div class="carousel-dots" id="carousel-dots" aria-label="Choose a photograph">
+              <button class="carousel-dot active" type="button" aria-label="Show photograph 1" aria-current="true"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 2"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 3"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 4"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 5"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 6"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 7"></button>
+              <button class="carousel-dot" type="button" aria-label="Show photograph 8"></button>
+            </div>
+            <span class="carousel-count">THE VZN</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL PORTFOLIO -->
     <section id="portfolio">
       <div class="container">
-
         <div class="section-heading">
           <div>
             <p class="section-label">Selected Work</p>
             <h2>The Portfolio.</h2>
           </div>
-
           <p class="section-intro">
             From matchday intensity to the details in between.
             Explore the moments captured through my lens.
@@ -770,124 +780,160 @@
         </div>
 
         <div class="filters" aria-label="Filter portfolio">
-          <button class="filter-button active" data-filter="all" aria-pressed="true">
-            All Work
-          </button>
+          <button class="filter-button active" data-filter="all" aria-pressed="true">All Work</button>
+          <button class="filter-button" data-filter="matchday" aria-pressed="false">Matchday</button>
+          <button class="filter-button" data-filter="portraits" aria-pressed="false">Portraits</button>
+          <button class="filter-button" data-filter="details" aria-pressed="false">Details</button>
+        </div>
 
-          <button class="filter-button" data-filter="matchday" aria-pressed="false">
-            Matchday
+        <div class="gallery-grid" id="gallery-grid">
+          <button class="gallery-item" data-category="matchday" data-title="Photo 01" data-image="images/IMG_0620.jpg">
+            <img src="images/IMG_0620.jpg" alt="Football photograph 1" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 01</span></span>
           </button>
-
-          <button class="filter-button" data-filter="portraits" aria-pressed="false">
-            Portraits
+          <button class="gallery-item" data-category="portraits" data-title="Photo 02" data-image="images/IMG_0622.jpg">
+            <img src="images/IMG_0622.jpg" alt="Football photograph 2" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 02</span></span>
           </button>
-
-          <button class="filter-button" data-filter="details" aria-pressed="false">
-            Details
+          <button class="gallery-item" data-category="details" data-title="Photo 03" data-image="images/IMG_0625.jpg">
+            <img src="images/IMG_0625.jpg" alt="Football photograph 3" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 03</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 04" data-image="images/IMG_1138.jpg">
+            <img src="images/IMG_1138.jpg" alt="Football photograph 4" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 04</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 05" data-image="images/IMG_1151.jpg">
+            <img src="images/IMG_1151.jpg" alt="Football photograph 5" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 05</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 06" data-image="images/IMG_1257.jpg">
+            <img src="images/IMG_1257.jpg" alt="Football photograph 6" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 06</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 07" data-image="images/IMG_1306.jpg">
+            <img src="images/IMG_1306.jpg" alt="Football photograph 7" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 07</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 08" data-image="images/IMG_2771.jpg">
+            <img src="images/IMG_2771.jpg" alt="Football photograph 8" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 08</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 09" data-image="images/IMG_3609.jpg">
+            <img src="images/IMG_3609.jpg" alt="Football photograph 9" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 09</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 10" data-image="images/IMG_3649.jpg">
+            <img src="images/IMG_3649.jpg" alt="Football photograph 10" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 10</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 11" data-image="images/IMG_3652.jpg">
+            <img src="images/IMG_3652.jpg" alt="Football photograph 11" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 11</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 12" data-image="images/IMG_3734.jpg">
+            <img src="images/IMG_3734.jpg" alt="Football photograph 12" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 12</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 13" data-image="images/IMG_3738.jpg">
+            <img src="images/IMG_3738.jpg" alt="Football photograph 13" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 13</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 14" data-image="images/IMG_3774.jpg">
+            <img src="images/IMG_3774.jpg" alt="Football photograph 14" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 14</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 15" data-image="images/IMG_3775.jpg">
+            <img src="images/IMG_3775.jpg" alt="Football photograph 15" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 15</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 16" data-image="images/IMG_6942.jpg">
+            <img src="images/IMG_6942.jpg" alt="Football photograph 16" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 16</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 17" data-image="images/IMG_6951.jpg">
+            <img src="images/IMG_6951.jpg" alt="Football photograph 17" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 17</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 18" data-image="images/IMG_6955.jpg">
+            <img src="images/IMG_6955.jpg" alt="Football photograph 18" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 18</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 19" data-image="images/IMG_9374.jpg">
+            <img src="images/IMG_9374.jpg" alt="Football photograph 19" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 19</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 20" data-image="images/IMG_9410.jpg">
+            <img src="images/IMG_9410.jpg" alt="Football photograph 20" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 20</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 21" data-image="images/IMG_9415.jpg">
+            <img src="images/IMG_9415.jpg" alt="Football photograph 21" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 21</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 22" data-image="images/IMG_4984.jpg">
+            <img src="images/IMG_4984.jpg" alt="Football photograph 22" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 22</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 23" data-image="images/IMG_5144.jpg">
+            <img src="images/IMG_5144.jpg" alt="Football photograph 23" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 23</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 24" data-image="images/IMG_5187.jpg">
+            <img src="images/IMG_5187.jpg" alt="Football photograph 24" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 24</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 25" data-image="images/IMG_5446.jpg">
+            <img src="images/IMG_5446.jpg" alt="Football photograph 25" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 25</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 26" data-image="images/IMG_5475.jpg">
+            <img src="images/IMG_5475.jpg" alt="Football photograph 26" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 26</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 27" data-image="images/IMG_5519.jpg">
+            <img src="images/IMG_5519.jpg" alt="Football photograph 27" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 27</span></span>
+          </button>
+          <button class="gallery-item" data-category="matchday" data-title="Photo 28" data-image="images/IMG_8200.jpg">
+            <img src="images/IMG_8200.jpg" alt="Football photograph 28" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Matchday</span><span class="gallery-title">Photo 28</span></span>
+          </button>
+          <button class="gallery-item" data-category="portraits" data-title="Photo 29" data-image="images/IMG_8299.jpg">
+            <img src="images/IMG_8299.jpg" alt="Football photograph 29" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Portraits</span><span class="gallery-title">Photo 29</span></span>
+          </button>
+          <button class="gallery-item" data-category="details" data-title="Photo 30" data-image="images/IMG_8301.jpg">
+            <img src="images/IMG_8301.jpg" alt="Football photograph 30" loading="lazy">
+            <span class="gallery-overlay"><span class="gallery-category">Details</span><span class="gallery-title">Photo 30</span></span>
           </button>
         </div>
 
-        <div class="gallery-grid">
-
-          <button class="gallery-item" data-category="matchday"
-                  data-title="Matchday Moments"
-                  data-image="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85">
-            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
-                 alt="Football matchday atmosphere" loading="lazy">
-            <span class="gallery-overlay">
-              <span class="gallery-category">Matchday</span>
-              <span class="gallery-title">Matchday Moments</span>
-            </span>
-          </button>
-
-          <button class="gallery-item" data-category="portraits"
-                  data-title="Player Portraits"
-                  data-image="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1600&q=85">
-            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
-                 alt="Football on the pitch" loading="lazy">
-            <span class="gallery-overlay">
-              <span class="gallery-category">Portraits</span>
-              <span class="gallery-title">Player Portraits</span>
-            </span>
-          </button>
-
-          <button class="gallery-item" data-category="details"
-                  data-title="The Details"
-                  data-image="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=85">
-            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80"
-                 alt="Football action and detail" loading="lazy">
-            <span class="gallery-overlay">
-              <span class="gallery-category">Details</span>
-              <span class="gallery-title">The Details</span>
-            </span>
-          </button>
-
-          <button class="gallery-item" data-category="matchday"
-                  data-title="The Action"
-                  data-image="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1600&q=85">
-            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80"
-                 alt="Football action on the pitch" loading="lazy">
-            <span class="gallery-overlay">
-              <span class="gallery-category">Matchday</span>
-              <span class="gallery-title">The Action</span>
-            </span>
-          </button>
-
-          <button class="gallery-item" data-category="portraits"
-                  data-title="The Players"
-                  data-image="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85">
-            <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80"
-                 alt="Football players and pitch" loading="lazy">
-            <span class="gallery-overlay">
-              <span class="gallery-category">Portraits</span>
-              <span class="gallery-title">The Players</span>
-            </span>
-          </button>
-
-          <button class="gallery-item" data-category="details"
-                  data-title="Beyond The 90"
-                  data-image="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1600&q=85">
-            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80"
-                 alt="Football stadium and pitch" loading="lazy">
-            <span class="gallery-overlay">
-              <span class="gallery-category">Details</span>
-              <span class="gallery-title">Beyond The 90</span>
-            </span>
-          </button>
-
-        </div>
-
-        <!-- LINK TO YOUR FULL EXTERNAL PORTFOLIO -->
-        <div style="text-align: center; margin-top: 45px;">
-          <p style="color: var(--muted); margin-bottom: 18px;">
+        <div style="text-align:center; margin-top:45px;">
+          <p style="color:var(--muted); margin-bottom:18px;">
             Want to see more of my photography?
           </p>
-
           <a href="https://bidvzn.myportfolio.com/"
              class="button button-primary"
-             target="_blank"
-             rel="noopener noreferrer">
+             target="_blank" rel="noopener noreferrer">
             Explore Full Portfolio ↗
           </a>
         </div>
-
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container about-layout">
-
         <div class="about-copy">
           <p class="section-label">Behind The Lens</p>
-
           <h2>More Than<br>A Game.</h2>
 
           <p>
             I'm Brady, better known as BIDVZN.
             Since leaving my academic years behind me, photography has become my life.
             What was once a hobby is now the start of a career I'm determined to build.
-            From capturing late winners, cupsets and everything inbetween, 
+            From capturing late winners, cupsets and everything inbetween,
             <strong>I aim to tell the story of the match through my lens. </strong>
           </p>
 
@@ -909,112 +955,175 @@
           Every match has a story.
           <span>I'm here to capture it.</span>
         </div>
-
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="container">
-
         <p class="section-label">Let's Work Together</p>
-
         <h2>Have A Game<br>In <span>Mind?</span></h2>
 
         <p>
           Football is so much more than a game.
-          It's emotion, identity and moments that'll  be remembered for a lifetime.         
+          It's emotion, identity and moments that'll be remembered for a lifetime.
           <strong>It's my job to make sure those moments never fade.</strong>
           Every match has a story has a different story. Let me capture yours.
           Contact now via <strong>Email or DM</strong> for more information.
         </p>
 
         <div class="contact-links">
-
-
           <a class="button button-outline"
              href="https://www.instagram.com/bidvzn/"
-             target="_blank"
-             rel="noopener noreferrer">
+             target="_blank" rel="noopener noreferrer">
             Instagram ↗
           </a>
 
-          <a class="button button-primary"
-             href="mailto:bidvzn.work@gmail.com">
+          <a class="button button-primary" href="mailto:bidvzn.work@gmail.com">
             Email Me
           </a>
-          
+
           <a class="button button-outline"
              href="https://bidvzn.myportfolio.com/"
-             target="_blank"
-             rel="noopener noreferrer">
+             target="_blank" rel="noopener noreferrer">
             Full Portfolio ↗
           </a>
-
         </div>
-
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-
       <div>
         <a href="#home" class="logo-image" aria-label="The VZN home">
           <img src="images/bid.png" alt="The VZN logo">
         </a>
-
         <p class="footer-tagline">Beyond the 90.</p>
       </div>
 
       <div class="footer-right">
         <a class="footer-social"
            href="https://www.instagram.com/bidvzn/"
-           target="_blank"
-           rel="noopener noreferrer">
+           target="_blank" rel="noopener noreferrer">
           Instagram · @bidvzn
         </a>
 
         <p>
           <a class="footer-social"
              href="https://bidvzn.myportfolio.com/"
-             target="_blank"
-             rel="noopener noreferrer">
+             target="_blank" rel="noopener noreferrer">
             View Full Portfolio ↗
           </a>
         </p>
 
         <p>© <span id="year"></span> The VZN. All rights reserved.</p>
       </div>
-
     </div>
   </footer>
 
   <!-- PHOTO LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-content">
-
-      <button class="lightbox-close" id="lightbox-close"
-              aria-label="Close image">
-        &times;
-      </button>
-
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
       <img id="lightbox-image" src="" alt="">
-
       <p class="lightbox-caption" id="lightbox-caption"></p>
-
     </div>
   </div>
 
   <script>
-    // Automatically update the copyright year
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    // Copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Portfolio category filters
+    // FEATURED CAROUSEL
+    const carousel = document.getElementById("featured-carousel");
+    const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
+    const dots = Array.from(carousel.querySelectorAll(".carousel-dot"));
+    const previousButton = document.getElementById("carousel-prev");
+    const nextButton = document.getElementById("carousel-next");
+    const carouselCount = document.getElementById("carousel-count");
+
+    let currentSlide = 0;
+    let carouselTimer = null;
+    const carouselDelay = 5000;
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides.forEach(function(slide, i) {
+        const isActive = i === currentSlide;
+        slide.classList.toggle("active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+        slide.tabIndex = isActive ? 0 : -1;
+      });
+
+      dots.forEach(function(dot, i) {
+        const isActive = i === currentSlide;
+        dot.classList.toggle("active", isActive);
+
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+
+      carouselCount.textContent =
+        String(currentSlide + 1).padStart(2, "0") + " / " +
+        String(slides.length).padStart(2, "0");
+    }
+
+    function stopCarousel() {
+      if (carouselTimer !== null) {
+        clearInterval(carouselTimer);
+        carouselTimer = null;
+      }
+    }
+
+    function startCarousel() {
+      stopCarousel();
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        carouselTimer = setInterval(function() {
+          showSlide(currentSlide + 1);
+        }, carouselDelay);
+      }
+    }
+
+    previousButton.addEventListener("click", function() {
+      showSlide(currentSlide - 1);
+      startCarousel();
+    });
+
+    nextButton.addEventListener("click", function() {
+      showSlide(currentSlide + 1);
+      startCarousel();
+    });
+
+    dots.forEach(function(dot, index) {
+      dot.addEventListener("click", function() {
+        showSlide(index);
+        startCarousel();
+      });
+    });
+
+    carousel.addEventListener("mouseenter", stopCarousel);
+    carousel.addEventListener("mouseleave", startCarousel);
+    carousel.addEventListener("focusin", stopCarousel);
+    carousel.addEventListener("focusout", function(event) {
+      if (!carousel.contains(event.relatedTarget)) startCarousel();
+    });
+
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) stopCarousel();
+      else startCarousel();
+    });
+
+    showSlide(0);
+    startCarousel();
+
+    // PORTFOLIO CATEGORY FILTERS
     const filterButtons = document.querySelectorAll(".filter-button");
     const galleryItems = document.querySelectorAll(".gallery-item");
 
@@ -1032,26 +1141,24 @@
 
         galleryItems.forEach(function(item) {
           const category = item.dataset.category;
-
-          if (selectedFilter === "all" || category === selectedFilter) {
-            item.classList.remove("hidden");
-          } else {
-            item.classList.add("hidden");
-          }
+          const shouldShow = selectedFilter === "all" || category === selectedFilter;
+          item.classList.toggle("hidden", !shouldShow);
         });
       });
     });
 
-    // Open and close the photo lightbox
+    // LIGHTBOX FOR CAROUSEL AND GALLERY PHOTOS
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
     const lightboxCaption = document.getElementById("lightbox-caption");
     const closeButton = document.getElementById("lightbox-close");
 
-    function openLightbox(item) {
-      lightboxImage.src = item.dataset.image;
-      lightboxImage.alt = item.dataset.title || "";
-      lightboxCaption.textContent = item.dataset.title || "";
+    function openLightbox(image, title) {
+      stopCarousel();
+
+      lightboxImage.src = image;
+      lightboxImage.alt = title || "Football photograph";
+      lightboxCaption.textContent = title || "";
 
       lightbox.classList.add("open");
       lightbox.setAttribute("aria-hidden", "false");
@@ -1064,20 +1171,25 @@
       lightbox.setAttribute("aria-hidden", "true");
       lightboxImage.src = "";
       document.body.style.overflow = "";
+      startCarousel();
     }
+
+    slides.forEach(function(slide) {
+      slide.addEventListener("click", function() {
+        openLightbox(slide.dataset.image, slide.dataset.title);
+      });
+    });
 
     galleryItems.forEach(function(item) {
       item.addEventListener("click", function() {
-        openLightbox(item);
+        openLightbox(item.dataset.image, item.dataset.title);
       });
     });
 
     closeButton.addEventListener("click", closeLightbox);
 
     lightbox.addEventListener("click", function(event) {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
+      if (event.target === lightbox) closeLightbox();
     });
 
     document.addEventListener("keydown", function(event) {
@@ -1086,6 +1198,5 @@
       }
     });
   </script>
-
 </body>
 </html>
