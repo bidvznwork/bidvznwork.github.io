@@ -124,16 +124,17 @@ header{
   to{opacity:1;transform:translateY(0)}
 }
 
-/* Main BIDVZN logo */
+/* Main BIDVZN logo — resized and brought closer to the hero text */
 .hero-logo{
   width:clamp(180px,27vw,340px);
   max-height:300px;
   height:auto;
   object-fit:contain;
-  margin:0 auto 30px;
+  margin:0 auto 12px;
   filter:drop-shadow(0 10px 35px rgba(0,0,0,.35))
 }
 
+/* Keep the existing spacing for other section labels */
 .eyebrow,.section-label{
   color:var(--accent);
   font-size:12px;
@@ -141,6 +142,11 @@ header{
   letter-spacing:3px;
   text-transform:uppercase;
   margin-bottom:20px
+}
+
+/* Tighten only the hero eyebrow spacing */
+.hero .eyebrow{
+  margin-bottom:10px
 }
 
 .hero h1{
@@ -626,6 +632,7 @@ footer .logo-image img{width:160px;max-height:75px;object-fit:contain;object-pos
 @media(max-width:600px){
   .gallery-grid{columns:2;column-gap:8px}
   .gallery-item{margin-bottom:8px}
+
   .gallery-item:after{left:9px;bottom:9px;font-size:8px;letter-spacing:1px}
 
   .lightbox{padding:64px 8px 74px}
@@ -659,10 +666,15 @@ footer .logo-image img{width:160px;max-height:75px;object-fit:contain;object-pos
     padding:50px 0 70px
   }
 
+  /* Smaller mobile logo with less space beneath it */
   .hero-logo{
     width:clamp(155px,48vw,220px);
     max-height:200px;
-    margin-bottom:25px
+    margin-bottom:8px
+  }
+
+  .hero .eyebrow{
+    margin-bottom:8px
   }
 
   .hero h1{
